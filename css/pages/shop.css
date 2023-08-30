@@ -1,0 +1,20 @@
+
+.shop-container{
+    display: flex;
+    margin-top:var(--spacing-68) ;
+
+}
+
+.shop-collection{
+
+    align-items: center;
+}
+
+.shop-collection__items{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.shop-collection___content{
+    gap: var(--spacing-24);
+}
