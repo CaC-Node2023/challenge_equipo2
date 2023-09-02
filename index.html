@@ -6,22 +6,62 @@
 </head>
 <body>
     <header>
-        <img src="" alt="">
-        <h2>Nuevos Ingresos</h2>
-        <p>Descubrí el próximo Funko Pop de tu colección</p>
-        <a href="./pages/shop/shop.html"></a>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a href="../pages/shop.html" class="navbar__link with-icon" >SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">   
+                        <li  class="submenu_items">
+                            <a class="submenu_link" href="">Funkos</a>
+                        </li>
+                        <li class="submenu_items">
+                            <a class="submenu_link" href="">Remeras</a>
+                        </li>
+                        <li class="submenu_items">
+                            <a class="submenu_link" href="">LLaveros</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a href="../pages/contact.html" class="navbar__link">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../pages/login.html" class="navbar__link">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../pages/cart.html" class="navbar__cart">
+                        <img src="../img/icons/cart-icon.svg" alt="icono de carrito">
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <section>
-        <article>
-            <h2>STAR WARS & THE MANDALORIAN</h2>
-        </article>
-        <article>
-            <h2>POKEMON INDIGO</h2>
-        </article>
-        <article>
-            <h2>HARRY POTTER</h2>
-        </article>
-    </section>
-
+    <footer>
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li  class="navbar__item">
+                    <a  class="navbar__link"href="">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a  class="navbar__link"href="">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>   
+                <img src="../img/branding/isotype.svg" alt="">
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
 </body>
 </html>
