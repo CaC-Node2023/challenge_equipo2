@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Este es el título de la página de admin</title>
+    <title>Admin </title>
 </head>
 <body>
-
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../../index.html">
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a href="../../pages/shop/shop.html" class="navbar__link with-icon" >SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">   
+                        <li  class="submenu_items">
+                            <a class="submenu_link" href="">Funkos</a>
+                        </li>
+                        <li class="submenu_items">
+                            <a class="submenu_link" href="">Remeras</a>
+                        </li>
+                        <li class="submenu_items">
+                            <a class="submenu_link" href="">LLaveros</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a href="../pages/contact.html" class="navbar__link">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="./login.html" class="navbar__link">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../shop/cart.html" class="navbar__cart">
+                        <img src="../img/icons/cart-icon.svg" alt="icono de carrito">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <img src="../../img/icons/search_icon.svg" alt="search_icon">
+            <form action=""></form>
+        </div>
+    </main>
+    <footer>
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li  class="navbar__item">
+                    <a  class="navbar__link"href="">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a  class="navbar__link"href="">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>   
+                <img src="../img/branding/isotype.svg" alt="">
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+            <a href="">
+                <img src="../../img/icons/search_icon.svg" alt="search_icon">
+            </a>
+            <form action="search">
+                <input type="search" name="product_list" placeholder="código, nombre o categoría">
+            </form>
+        </div>
+        <div>
+            <h2>LISTADO DE PRODUCTOS</h2>
+            <div>
+                <h4>AGREGAR</h4>
+                <img src="../../img/icons/plus_icon.svg" alt="add">
+            </div>
+            <h6>ID</h6>
+            <h6>Código</h6>
+            <h6>Nombre del producto</h6>
+            <h6>Categoría</h6>
+        </div>
+    </main>
+    <footer>
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li class="navbar__item">
+                    <a class="navbar__link"href="../shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link"href="./login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../pages/contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>   
+                <img src="../img/branding/isotype.svg" alt="">
+            </picture>
+        </nav>
+    <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+</footer>  
 </body>
 </html>
