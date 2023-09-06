@@ -5,6 +5,99 @@
     <title>Title</title>
 </head>
 <body>
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../index.html">
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                
+                <li class="navbar__item">
+                    <a href="../shop/shop.html" class="navbar__link">VER TIENDA</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="admin.html" class="navbar__link">ADMIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="login.html"
+                     class="navbar__link">SALIR</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>CREAR NUEVO ITEM</h2>
+            <form action="">
+                <label for="">Categoría</label>
+                <select name="articulo">
+                    <optgroup label="Categorias">
+                      <option value="Pokemon">Pokemon</option>
+                      <option value="Harry Potter">Harry Potter</option>                     
+                    </optgroup>
+                    
+                  </select>
+                  <label for="">Licencia:</label>
+                <select name="articulo">
+                    <optgroup label="Licencia">
+                      <option value=""></option>
+                      <option value=""></option>                     
+                    </optgroup>                                   
+                  </select>
+                  <label for="">Nombre del producto:</label> 
+                  <p>Kakashi Hatake Shippuden Saga</p>
+                  <textarea name="comentarios" rows="5" cols="60" readonly>
+                    Descripcion del producto
+                    </textarea> 
+                    <label for="">SKU:</label> 
+                    <p>SSK111AB001</p>
+                    <label for="">Precio:</label> 
+                    <p>$0.000,00</p>
+                    <label for="">Stock:</label> 
+                    <p>0</p>
+                    <label for="">Descuento:</label> 
+                    <p>0%</p>
+
+                <label for="">CUOTAS:</label> 
+                <select name="Pago">
+                    <optgroup label="forma de Pagos">
+                      <option value="">3 cuota sin interés</option>                                          
+                    </optgroup>                                   
+                  </select>  
+                 <label for="Imagenes">Imagenes:</label>
+                 <input type="file" name="imagenes">
+                 <button type="submit">Agregar Producto</button>
+                <button type="reset">Limpiar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li  class="navbar__item">
+                    <a  class="navbar__link" href="../shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a  class="navbar__link"href="login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>   
+                <img src="../../img/branding/isotype.svg" alt="isologotipo de la Marca FunkoShop">
+            </picture>
+
+        </nav>
+    <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+</footer> 
+
 
 </body>
 </html>
