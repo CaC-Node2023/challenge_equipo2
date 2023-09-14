@@ -1,0 +1,9 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.with-icon{
+    display: flex;
+    align-items: center;
+    gap:var(--spacing-8)
+}

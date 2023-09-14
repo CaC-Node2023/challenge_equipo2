@@ -12,12 +12,15 @@
 @import url('./partials/header.css');
         /*footer*/
 @import url('./partials/footer.css');
-
+ /*buttons*/
+ @import url('./partials/button.css');
 
 /** SLIDERS **/
 @import url('./components/slider.css');
 
 
+
 /** PAGINAS **/
 @import url('./pages/home.css');
 @import url('./pages/shop.css');
+@import url('./pages/cart.css');
