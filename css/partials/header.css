@@ -1,6 +1,7 @@
-header{
+header {
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
+    align-items: center;
 }
 
 .navbar {
@@ -8,33 +9,56 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     padding: 0;
-    margin: 0 auto;
+    gap: var(--spacing-240);
+}
+
+.navbar__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    /* Espacio entre los enlaces */
 }
 
 .a {
     text-decoration: none;
+    align-items: center;
+    color: inherit;
+    /* toma el color que viene el heredaro .En este caso html : #1111 */
+    font-family: inherit;
     margin: 0;
 }
 
-.navbar__cart img {
-    align-items: center;
+ul,
+li {
+    font-size: 20px;
 }
 
+.navbar__cart img {
+    height: 20px;
+    margin-top: 2px;
+}
 
+.logo {
+    max-width: 300px;
+    margin-right: var(--spacing-240);
+
+}
 
 /* Estilos para los elementos del menú */
 .navbar__menu {
     list-style-type: none;
     display: flex;
-
     align-items: center;
+    gap: var(--spacing-12);
 }
 
 .navbar__item {
     display: inline-block;
-    margin-right: var(--spacing-16);
+    margin-right: var(--spacing-24);
+    position: relative;
 
 }
 
@@ -47,6 +71,12 @@ header{
     text-decoration: underline;
 }
 
+.links-container {
+
+    margin-left: var(--spacing-68);
+    /* Empuja los enlaces hacia la derecha */
+}
+
 /* Estilos para el submenú */
 .submenu {
     display: none;
@@ -54,6 +84,7 @@ header{
     background-color: #444;
     list-style-type: none;
     padding: 0;
+    flex-direction: column;
 }
 
 .submenu_items {
@@ -64,9 +95,15 @@ header{
     text-decoration: none;
     color: white;
     display: block;
-    padding: 0 auto;
+    padding: 10px 20px;
 }
 
 .submenu_link:hover {
     background-color: #555;
+}
+
+.navbar__item:hover .submenu {
+    display: flex;
+    /* o block, según sea necesario */
+
 }
