@@ -18,21 +18,21 @@ a {
     font-family: inherit;
 }
 
-header,
-footer{
+header,footer{
     font-family: var(--alternative-font);
     color:var(--light-font-solid);
 }
 
-
-ul,
-ol{
+ul,ol{
     list-style: none;
 }
 
 
 p{
-
     font-size: 1.8em;
+}
+
+img{
+    width: 100%;
 }
 

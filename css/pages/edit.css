@@ -1,0 +1,16 @@
+.form__line1{
+    font-weight: 300;
+}
+
+.form__line{
+    display: flex;
+    gap: var(--spacing-28);
+}
+
+.form__line__Select-img{
+    display: flex;
+    gap: var(--spacing-28);
+    font-size: 24px;
+    font-weight: inherit;
+}
+

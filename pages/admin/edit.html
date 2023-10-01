@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
     <title>shop</title>
 </head>
@@ -28,76 +28,86 @@
             </ul>
         </nav>
     </header> <!--Fin Header-->
-    <main class="">
-        <section>
-            <h2>EDITAR ITEM</h2>
-            <form action="" method="get">
-                <div>
-                    <label for="Categoria">Categoria:</label>
-                    <select name="Categoria" id="Categoria" aria-placeholder="Seleccionar">
-                        <option value="Figuras">Figuras</option>
-                        <option value="Remeras">Remeras</option>
-                        <option value="Llaveros">Llaveros</option>
-                    </select>
-                    <label for="Licencia">Licencia:</label>
-                    <select name="Licencia" id="Licencia">
-                        <option value="Harry Potter">Harry Potter</option>
-                        <option value="Pokemon">Pokemon</option>
-                        <option value="Star-Wars">Star-Wars</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="Nombre del Producto">Nombre del Producto:</label>
-                    <input type="text" name="Nombre del Producto" id="Nombre del Producto">
-                </div>
-                <div>
-                    <textarea name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripción del Producto"></textarea>
-                </div>
-                <div>
-                    <label for="SKU">SKU:</label>
-                    <input type="text" name="SKU" id="SKU">
-                    <label for="Precio">Precio:</label>
-                    <input type="number" name="Precio" id="Precio">
-                    <label for="Stock">Stock:</label>
-                    <input type="number" name="Stock" id="Stock">
-                </div>
-                <div>
-                    <label for="Descuento">Descuento:</label>
-                    <input type="number" name="Descuento" id="Descuento">
-                    <label for="Cuotas">Cuotas:</label>
-                    <select name="Cuotas" id="Cuotas" aria-placeholder="3 Cuotas sin interés">
-                        <option value="3 Cuotas sin interés">3 Cuotas sin interés</option>
-                        <option value="6 Cuotas sin interés">6 Cuotas sin interés</option>
-                        <option value="12 Cuotas sin interés">12 Cuotas sin interés</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="Imagenes">Imagenes:</label>
-                    <button type="menu">Elegir archivos</button>
-                    <label for="No se ha seleccionado ningún archivo">No se ha seleccionado ningún archivo</label>
-                </div>
-                <ul>
-                    <li>
-                        <article>
-                            <picture>
-                                <img src="" alt="">
-                                <figcaption>Frente</figcaption>
-                            </picture>
-                        </article>
-                    </li>
-                    <li>
-                       <article>
-                        <picture>
-                            <img src="" alt="">
-                            <figcaption>Dorso</figcaption>
-                        </picture>
-                       </article>
-                    </li>
-                </ul>
-                <div>
-                    <button type="submit">Modificar Producto</button>
-                </div>
-            </form>
+    <main class="main-container">
+        <section class="form container">
+            <h2 class="form__title">EDITAR ITEM</h2>
+                <form class="form__content" action="" method="get">
+                    <div class="form__line1 form__line">
+                        <label for="Categoria">Categoria:</label>
+                        <select name="Categoria" id="Categoria" aria-placeholder="Seleccionar">
+                            <option value="Figuras">Figuras</option>
+                            <option value="Remeras">Remeras</option>
+                            <option value="Llaveros">Llaveros</option>
+                        </select>
+                        <label for="Licencia">Licencia:</label>
+                        <select name="Licencia" id="Licencia">
+                            <option value="Harry Potter">Harry Potter</option>
+                            <option value="Pokemon">Pokemon</option>
+                            <option value="Star-Wars">Star-Wars</option>
+                        </select>
+                    </div>
+                    <div class="form__line">
+                        <label for="Nombre del Producto">Nombre del Producto:</label>
+                        <input type="text" name="Nombre del Producto" id="Nombre del Producto">
+                    </div>
+                    <div class="form__line">
+                        <textarea name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripción del Producto"></textarea>
+                    </div>
+                    <div class="form__line">
+                        <label for="SKU">SKU:</label>
+                        <input type="text" name="SKU" id="SKU">
+                        <label for="Precio">Precio:</label>
+                        <input type="number" name="Precio" id="Precio">
+                        <label for="Stock">Stock:</label>
+                        <input type="number" name="Stock" id="Stock">
+                    </div>
+                    <div class="form__line">
+                        <label for="Descuento">Descuento:</label>
+                        <input type="number" name="Descuento" id="Descuento">
+                        <label for="Cuotas">Cuotas:</label>
+                        <select name="Cuotas" id="Cuotas" aria-placeholder="3 Cuotas sin interés">
+                            <option value="3 Cuotas sin interés">3 Cuotas sin interés</option>
+                            <option value="6 Cuotas sin interés">6 Cuotas sin interés</option>
+                            <option value="12 Cuotas sin interés">12 Cuotas sin interés</option>
+                        </select>
+                    </div>
+                    <div class="form__line">
+                        <ul class="form__line__Select-img">
+                            <li>
+                                <p>Imagenes:</p>
+                            </li>
+                            <li>
+                                <button type="menu">Elegir archivos</button>
+                            </li>
+                            <li>
+                                <p>No se ha seleccionado ningún archivo</p>
+                            </li>
+                        </ul>                 
+                    </div>
+                    <div class="form__line">
+                        <ul>
+                            <li>
+                                <article>
+                                    <picture>
+                                        <img src="" alt="">
+                                        <figcaption>Frente</figcaption>
+                                    </picture>
+                                </article>
+                            </li>
+                            <li>
+                            <article>
+                                <picture>
+                                    <img src="" alt="">
+                                    <figcaption>Dorso</figcaption>
+                                </picture>
+                            </article>
+                            </li>
+                        </ul>
+                    </div>
+                    <div >
+                        <button type="submit">Modificar Producto</button>
+                    </div>
+                </form>
         </section>   
     </main>
     <footer> <!--Inicio Footer-->
