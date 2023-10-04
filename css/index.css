@@ -31,7 +31,8 @@
 
 /** SLIDERS **/
 @import url('./components/slider.css');
-
+/**Buttons*/
+ @import url('./partials/button.css');
 
 /** PAGINAS **/
 @import url('./pages/home.css');
@@ -54,3 +55,4 @@
 
 @import url('./pages/register.css');
 
+@import url('./partials/small-card.css');

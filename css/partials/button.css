@@ -1,0 +1,26 @@
+.hero__link{
+    background-color:--light-bg-solid;
+    color:var(--dark-solid);
+}
+
+.btn_coleccion{
+    background-color:var(--dark-bg-solid);
+    color:var(--light-font-solid);
+    font-size:1.8em;
+    padding: 10px 15px;
+    border-radius:15px;
+    margin-top: 20px;
+    font-family:'Raleway', sans-serif;
+    font-weight:600;
+}
+.btn_red{
+    background-color:var(--primary-solid);
+    color:var(--light-font-solid);
+    font-size:1.2em;
+    padding: 5px 10px; 
+    margin-top: 20px;
+    font-family:'Raleway', sans-serif;
+    font-weight:600;
+    border: none; 
+    box-shadow: none;
+}
