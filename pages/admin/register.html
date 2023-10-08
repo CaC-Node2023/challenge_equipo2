@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../../css/index.css">
 </head>
 <body>
     <header>
         <nav class="navbar container">
-            <picture class="navbar__logo">
-                <a href="../index.html">
-                    <img src="../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
-                </a>
-            </picture>
-            <li class="navbar__item">
-                <a href="../shop/shop.html" class="navbar__link">VER TIENDA</a>
-            </li>
-            <li class="navbar__item">
-                <a href="../admin/admin.html" class="navbar__link">ADMIN</a>
-            </li>
-            <li class="navbar__item">
-                <a href="../admin/login.html" class="navbar__cart">SALIR</a>
-            </li>   
-        </nav>
+            <div class="logo">
+                <picture class="navbar__logo">
+                    <a href="../index.html">
+                        <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
+                    </a>
+                </picture>
+            </div>
+            <nav class="navbar container">
+                <div class="links-container">
+                    <li class="navbar__item">
+                        <a href="../shop/shop.html" class="navbar__link">VER TIENDA</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../admin/admin.html" class="navbar__link">ADMIN</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../admin/login.html" class="navbar__link">SALIR</a>
+                    </li>
+                </div>
+            </nav>
     </header>
 <main class="container register-container">
     <div class="">
@@ -62,24 +68,25 @@
         <input type="checkbox" id="terminos" name="terminos" required>
         <label for="terminos">Acepto <a href="terminos_y_condiciones.html" target="_blank">Términos y Condiciones</a></label>
     </form>
+</main>
     <footer>
-        <nav class="navbar container">
-            <ul class="navbar__items">
-                <li  class="navbar__item">
+        <nav class="footer-container">
+            <ul class="navbar__itemsf">
+                <li  class="navbar__itemsf">
                     <a  class="navbar__link"href="">SHOP</a>
                 </li>
-                <li class="navbar__item">
+                <li class="navbar__itemsf">
                     <a class="navbar__link" href="">REGISTRARSE</a>
                 </li>
-                <li class="navbar__item">
+                <li class="navbar__itemsf">
                     <a  class="navbar__link"href="">LOGIN</a>
                 </li>
-                <li class="navbar__item">
+                <li class="navbar__itemsf">
                     <a class="navbar__link" href="">CONTACTO</a>
                 </li>
             </ul>
-            <picture>   
-                <img src="../img/branding/isotype.svg" alt="">
+            <picture class="logof">   
+                <img src="../../img/branding/isotype.svg" alt="">
             </picture>
         </nav>
     <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>

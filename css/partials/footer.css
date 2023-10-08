@@ -1,0 +1,31 @@
+footer {
+    padding: var(--spacing-68);
+    background-color: var(--dark-bg-solid);
+}
+.footer-container{
+    flex-wrap: wrap;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 auto;
+
+}
+.itemsf{
+    display: flex;
+    flex-direction: column;
+}
+
+.logof{
+    float: right;
+}
+
+.footer__copy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
