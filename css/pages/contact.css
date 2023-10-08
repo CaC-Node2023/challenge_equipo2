@@ -1,0 +1,38 @@
+#contact {
+    margin: var(--spacing-68) auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--spacing-36);
+}
+
+.contact__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+    align-items: center;
+    justify-content: center;
+}
+
+.contact__title {
+    font-size: var(--font-jumbo);
+}
+
+.contact__subtitle {
+    font-size: var(--font-large);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--spacing-36);
+}
+
+.contact__form textarea {
+    font-family: inherit;
+    font-size: var(--font-medium);
+    padding: var(--spacing-16);
+}
