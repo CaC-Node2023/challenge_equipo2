@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../../css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-    <title>shop</title>
+    <title>EDIT</title>
 </head>
-<body>
-        <header><!--Inicio Header-->
-        <nav class="navbar container">
+<body class="container">
+    <header class="header"><!--Inicio Header-->
+        <nav class="navbar__container">
             <picture class="navbar__logo">
                 <a href="../../index.html">
                     <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
@@ -28,81 +28,89 @@
             </ul>
         </nav>
     </header> <!--Fin Header-->
-    <main class="">
+    <main>
         <section>
-            <h2>EDITAR ITEM</h2>
-            <form action="" method="get">
-                <div>
-                    <label for="Categoria">Categoria:</label>
-                    <select name="Categoria" id="Categoria" aria-placeholder="Seleccionar">
-                        <option value="Figuras">Figuras</option>
-                        <option value="Remeras">Remeras</option>
-                        <option value="Llaveros">Llaveros</option>
-                    </select>
-                    <label for="Licencia">Licencia:</label>
-                    <select name="Licencia" id="Licencia">
-                        <option value="Harry Potter">Harry Potter</option>
-                        <option value="Pokemon">Pokemon</option>
-                        <option value="Star-Wars">Star-Wars</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="Nombre del Producto">Nombre del Producto:</label>
-                    <input type="text" name="Nombre del Producto" id="Nombre del Producto">
-                </div>
-                <div>
-                    <textarea name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripción del Producto"></textarea>
-                </div>
-                <div>
-                    <label for="SKU">SKU:</label>
-                    <input type="text" name="SKU" id="SKU">
-                    <label for="Precio">Precio:</label>
-                    <input type="number" name="Precio" id="Precio">
-                    <label for="Stock">Stock:</label>
-                    <input type="number" name="Stock" id="Stock">
-                </div>
-                <div>
-                    <label for="Descuento">Descuento:</label>
-                    <input type="number" name="Descuento" id="Descuento">
-                    <label for="Cuotas">Cuotas:</label>
-                    <select name="Cuotas" id="Cuotas" aria-placeholder="3 Cuotas sin interés">
+            <h2 class="form__tittle">EDITAR ITEM</h2>
+            <form class="form__structure" method="get">
+                <div class="form__space"><!--Inicio Categoria y Licencia-->
+                    <div>
+                        <label class="form__text__cat" for="Categoria">Categoria:</label>
+                        <select class="form__select" name="Categoria" id="Categoria" aria-placeholder="Seleccionar">
+                            <option value="Figuras">Figuras</option>
+                            <option value="Remeras">Remeras</option>
+                            <option value="Llaveros">Llaveros</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form__text__cat" for="Licencia">Licencia:</label>
+                        <select class="form__select" name="Licencia" id="Licencia">
+                            <option value="Naruto Shippuden">Naruto Shippuden</option>
+                            <option value="Harry Potter">Harry Potter</option>
+                            <option value="Pokemon">Pokemon</option>
+                            <option value="Star-Wars">Star-Wars</option>
+                        </select>
+                    </div>
+                </div><!--Fin Categoria y Licencia-->
+                <div class="form__space"><!--Inicio Nombre del producto -->
+                    <label class="form__text__options" for="Nombre del Producto">Nombre del Producto:</label>
+                    <input class="form form__input__long" type="text" name="Nombre del Producto" id="Nombre del Producto" value="Kakashi Hatake Shippuden Saga">
+                </div><!--Fin Nombre del producto -->
+                <div class="form__textarea"><!-- Inicio Descripcion del producto-->
+                    <textarea class="form__textarea__text" name="Descripcion" id="Descripcion" cols="30" rows="5" placeholder="Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori."></textarea>
+                </div><!--Fin Descripcion del producto -->
+                <div class="form__space"><!-- Inicio SKU, Precio, Stock-->
+                    <label class="form__text__options" for="SKU">SKU:</label>
+                    <input class="form form__input__mid" type="text" name="SKU" id="SKU" value="NAR001012">
+                    <label class="form__text__options" for="Precio">Precio:</label>
+                    <input class="form form__input__mid" type="text" name="Precio" id="Precio" value=" $ 1.799,00"><!-- Revisar type-->
+                    <label class="form__text__options" for="Stock">Stock:</label>
+                    <input class="form form__input form__input__short" type="text" name="Stock" id="Stock" value="10"><!-- Revisar type-->
+                </div><!-- Fin SKU, Precio, Stock-->
+                <div class="form__space"><!-- Inicio Descuento, cuotas-->
+                    <label class="form__text__options" for="Descuento">Descuento:</label>
+                    <input class="form form__input form__input__short" type="text" name="Descuento" id="Descuento" value="10%"><!-- Revisar type-->
+                    <label class="form__text__options" for="Cuotas">Cuotas:</label>
+                    <select class="form__text__option form__select" name="Cuotas" id="Cuotas" aria-placeholder="3 Cuotas sin interés">
                         <option value="3 Cuotas sin interés">3 Cuotas sin interés</option>
                         <option value="6 Cuotas sin interés">6 Cuotas sin interés</option>
                         <option value="12 Cuotas sin interés">12 Cuotas sin interés</option>
                     </select>
-                </div>
-                <div>
-                    <label for="Imagenes">Imagenes:</label>
-                    <button type="menu">Elegir archivos</button>
-                    <label for="No se ha seleccionado ningún archivo">No se ha seleccionado ningún archivo</label>
-                </div>
-                <ul>
-                    <li>
-                        <article>
-                            <picture>
-                                <img src="" alt="">
-                                <figcaption>Frente</figcaption>
-                            </picture>
-                        </article>
-                    </li>
-                    <li>
-                       <article>
-                        <picture>
-                            <img src="" alt="">
-                            <figcaption>Dorso</figcaption>
-                        </picture>
-                       </article>
-                    </li>
-                </ul>
-                <div>
-                    <button type="submit">Modificar Producto</button>
-                </div>
+                </div><!-- Fin Descuento, cuotas-->
             </form>
-        </section>   
-    </main>
-    <footer> <!--Inicio Footer-->
+        </section>
         <section>
-            <nav class="navbar container">
+            <div class="elegirarchivo"><!-- Inicio Imagenes form-->
+                <label class="form__text__options" for="Imagenes">Imágenes:</label>
+                <button type="menu">Elegir archivos</button>
+                <label class="form__text__seleccionado" for="No se ha seleccionado ningún archivo">No se ha seleccionado ningún archivo</label>
+            </div><!-- Fin Imagenes form-->
+                <ul class="naruto"><!-- Inicio Frente y dorso-->
+                    <li class="naruto__column">
+                        <picture>
+                                <a href="../../img/naruto/kakashi_hatake_front.png">
+                                    <img class="form naruto__img" src="../../img/naruto/kakashi_hatake_front.png" alt="Imagen de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
+                                    <!-- <figcaption>Frente</figcaption>-->
+                                </a>
+                        </picture>
+                        <p class="naruto__text__frenteydorso">Frente</p>
+                    </li>
+                    <li class="naruto__column">
+                        <picture>
+                                <a href="../../img/naruto/kakashi_hatake_back.png">
+                                    <img class="form naruto__img" src="../../img/naruto/kakashi_hatake_back.png" alt="Imagen de la caja de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
+                                </a>
+                        </picture>
+                        <p class="naruto__text__frenteydorso">Dorso</p>
+                    </li>
+                </ul><!-- Fin Frente y dorso-->
+                <div class="modif__prod"><!-- Inicio boton modificar producto-->
+                    <button class="button" type="submit">Modificar Producto</button>
+                </div><!-- Fin boton modificar producto-->
+        </section>
+    </main>
+    <footer class="footer"> <!--Inicio Footer-->
+        <section>
+            <nav class="navbar__container">
                 <ul class="navbar__items" >
                     <li class="navbar__item">
                         <a  class="navbar__link"href="../shop/shop.html">SHOP</a>
