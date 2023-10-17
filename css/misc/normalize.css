@@ -1,15 +1,15 @@
-
 *,
-*::before, 
-*::after{  
+*::before,
+*::after {
     margin: 0;    
     padding: 0;
     box-sizing: border-box;  /* empuja el contenido hacia dentro, si es content-box, pero el tamaño lo tira para afuera*/
 }
-html{
-    font-family:var(--base-font);
-    font-size:62.5%;   /* em(texto-fuente ) -- rem(caja- contenedores)  */
-    color:var(--dark-solid);
+
+html {
+    font-family: var(--base-font);
+    font-size: 62.5%;   /* em(texto-fuente ) -- rem(caja- contenedores)  */
+    color: var(--dark-solid);
 }
 
 a {
@@ -19,20 +19,37 @@ a {
 }
 
 header,
-footer{
+footer {
     font-family: var(--alternative-font);
     color:var(--light-font-solid);
 }
 
-
-ul,
-ol{
+ul, ol {
     list-style: none;
 }
 
-
-p{
-
-    font-size: 1.8em;
+p {
+    font-size: var(--font-medium);
 }
 
+img {
+    width: 100%;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="text"]::placeholder {
+    color: var(--dark-300);
+    font-family: var(--base-font);
+    font-weight: 500;
+}
+
+select,
+select option {
+    color: var(--dark-solid);
+}
+
+select:invalid,
+select option[value=""] {
+    color: var(--dark-300);
+}
