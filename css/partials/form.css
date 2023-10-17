@@ -4,7 +4,7 @@ textarea {
     width: 100%;
 }
 
-textarea::placeholder {;
+textarea::placeholder {
     color: var(--dark-300);
 }
 
