@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <title>Contacto</title>
+</head>
+<body class="grid-fixed">
+    <!-- INICIO HEADER -->
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../../index.html">
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a href="../../index.html" class="navbar__link with-icon" >SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li  class="submenu_items">
+                            <a class="submenu_link" href="">Funkos</a>
+                        </li>
+                        <li class="submenu_items">
+                            <a class="submenu_link" href="">Remeras</a>
+                        </li>
+                        <li class="submenu_items">
+                            <a class="submenu_link" href="">LLaveros</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../pages/shop/contact.html" class="navbar__link">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../pages/admin/login.html" class="navbar__link">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../pages/shop/cart.html" class="navbar__cart">
+                        <img src="../../img/icons/cart-icon.svg" alt="icono de carrito">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- FIN HEADER -->
+    <!-- INICIO MAIN -->
+    <main id="contact" class="container">
+        <div class="contact__header">
+            <h2 class="contact__title">CONTACTO</h2>
+            <p class="contact__subtitle">Completá el formulario y responderemos a la brevedad</p>
+        </div>
+        <form class="contact__form" action="/contact" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="form__box--grid">
+                <label class="form__label" for="name">Nombre:</label>
+                <input class="form__input" type="text" name="name" id="name" placeholder="Juan" required>
+            </div>
+            <div class="form__box--grid">
+                <label class="form__label" for="lastname">Apellido:</label>
+                <input class="form__input" type="text" name="lastname" id="lastname" placeholder="Pérez" required>
+            </div>
+            <div class="form__box--grid">
+                <label class="form__label" for="email">Email:</label>
+                <input class="form__input" type="email" name="email" id="email" placeholder="juanperez@mail.com" required>
+            </div>
+            <div>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Tu consulta." required></textarea>
+            </div>
+            <div class="form__submission">
+                <input class="form__btn btn btn--primary btn--large" type="submit" value="ENVIAR">
+            </div>
+        </form>
+    </main>
+    <!-- FIN MAIN -->
+    <!-- INICIO FOOTER -->
+    <footer>
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li  class="navbar__item">
+                    <a  class="navbar__link" href="../../index.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../../pages/admin/register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a  class="navbar__link" href="../../pages/admin/login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../../pages/shop/contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <img src="../../img/branding/isotype.svg" alt="">
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+    <!-- FIN FOOTER -->
+</body>
+</html>

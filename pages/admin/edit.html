@@ -2,9 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <title>shop</title>
 </head>
 <body>
-
+        <header><!--Inicio Header-->
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../../index.html">
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="../shop/shop.html" class="navbar__link">VER TIENDA</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="./admin.html" class="navbar__link">ADMIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../index.html" class="navbar__link">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header> <!--Fin Header-->
+    <main class="">
+        <section>
+            <h2>EDITAR ITEM</h2>
+            <form action="" method="get">
+                <div>
+                    <label for="Categoria">Categoria:</label>
+                    <select name="Categoria" id="Categoria" aria-placeholder="Seleccionar">
+                        <option value="Figuras">Figuras</option>
+                        <option value="Remeras">Remeras</option>
+                        <option value="Llaveros">Llaveros</option>
+                    </select>
+                    <label for="Licencia">Licencia:</label>
+                    <select name="Licencia" id="Licencia">
+                        <option value="Harry Potter">Harry Potter</option>
+                        <option value="Pokemon">Pokemon</option>
+                        <option value="Star-Wars">Star-Wars</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Nombre del Producto">Nombre del Producto:</label>
+                    <input type="text" name="Nombre del Producto" id="Nombre del Producto">
+                </div>
+                <div>
+                    <textarea name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripción del Producto"></textarea>
+                </div>
+                <div>
+                    <label for="SKU">SKU:</label>
+                    <input type="text" name="SKU" id="SKU">
+                    <label for="Precio">Precio:</label>
+                    <input type="number" name="Precio" id="Precio">
+                    <label for="Stock">Stock:</label>
+                    <input type="number" name="Stock" id="Stock">
+                </div>
+                <div>
+                    <label for="Descuento">Descuento:</label>
+                    <input type="number" name="Descuento" id="Descuento">
+                    <label for="Cuotas">Cuotas:</label>
+                    <select name="Cuotas" id="Cuotas" aria-placeholder="3 Cuotas sin interés">
+                        <option value="3 Cuotas sin interés">3 Cuotas sin interés</option>
+                        <option value="6 Cuotas sin interés">6 Cuotas sin interés</option>
+                        <option value="12 Cuotas sin interés">12 Cuotas sin interés</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Imagenes">Imagenes:</label>
+                    <button type="menu">Elegir archivos</button>
+                    <label for="No se ha seleccionado ningún archivo">No se ha seleccionado ningún archivo</label>
+                </div>
+                <ul>
+                    <li>
+                        <article>
+                            <picture>
+                                <img src="" alt="">
+                                <figcaption>Frente</figcaption>
+                            </picture>
+                        </article>
+                    </li>
+                    <li>
+                       <article>
+                        <picture>
+                            <img src="" alt="">
+                            <figcaption>Dorso</figcaption>
+                        </picture>
+                       </article>
+                    </li>
+                </ul>
+                <div>
+                    <button type="submit">Modificar Producto</button>
+                </div>
+            </form>
+        </section>   
+    </main>
+    <footer> <!--Inicio Footer-->
+        <section>
+            <nav class="navbar container">
+                <ul class="navbar__items" >
+                    <li class="navbar__item">
+                        <a  class="navbar__link"href="../shop/shop.html">SHOP</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a  class="navbar__link"href="./login.html">LOGIN</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="./contacto.html">CONTACTO</a>
+                    </li>
+                </ul>
+                <picture>   
+                    <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca FunkoShop">
+                </picture>
+            </nav>
+        </section>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>  <!--Fin Footer-->
 </body>
 </html>
