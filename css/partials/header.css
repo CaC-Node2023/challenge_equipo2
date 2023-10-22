@@ -1,17 +1,15 @@
 header {
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-36);
-    align-items: center;
-}
+    font-family: var( --alternative-font);
+  }
 
 .navbar {
-    font-family: 'Raleway', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 0;
-    gap: var(--spacing-240);
 }
 
 .navbar__list {
@@ -31,10 +29,6 @@ header {
     margin: 0;
 }
 
-ul,
-li {
-    font-size: 20px;
-}
 
 .navbar__cart img {
     height: 20px;
@@ -43,17 +37,16 @@ li {
 
 .logo {
     max-width: 300px;
-    margin-right: var(--spacing-240);
+    margin-right: var(--spacing-20);
 
 }
 
 /* Estilos para los elementos del menú */
 .navbar__menu {
-    list-style-type: none;
     display: flex;
     align-items: center;
-    gap: var(--spacing-12);
-}
+    gap: var(--spacing-240);
+  }
 
 .navbar__item {
     display: inline-block;
@@ -63,12 +56,15 @@ li {
 }
 
 .navbar__link {
-    text-decoration: none;
-    color: white;
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-16);
+    display: inline-block;
+    transition: background 0.3s ease-in-out;
+    position: relative;
 }
 
 .navbar__link:hover {
-    text-decoration: underline;
+    background-color: var(--primary-900);
 }
 
 .links-container {
@@ -80,26 +76,22 @@ li {
 /* Estilos para el submenú */
 .submenu {
     display: none;
+    width: 300px;
     position: absolute;
-    background-color: #444;
-    list-style-type: none;
-    padding: 0;
-    flex-direction: column;
-}
+    background-color: var(--dark-bg-solid);
+    z-index: 3;
+  }
 
-.submenu_items {
-    margin: 0;
-}
 
 .submenu_link {
-    text-decoration: none;
-    color: white;
     display: block;
-    padding: 10px 20px;
-}
+    padding: var(--spacing-8) var(--spacing-16);
+    font-size: var(--font-medium);
+    transition: background 0.3s ease-in-out;
+  }
 
 .submenu_link:hover {
-    background-color: #555;
+    background-color: var(--primary-900);
 }
 
 .navbar__item:hover .submenu {

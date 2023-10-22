@@ -16,6 +16,9 @@ footer {
 .itemsf{
     display: flex;
     flex-direction: column;
+    list-style-type: none; /* Quita los marcadores de lista */
+    margin: 0;
+    padding: 0;
 }
 
 .logof{
@@ -28,4 +31,3 @@ footer {
     justify-content: center;
     margin: 0 auto;
 }
-
