@@ -27,7 +27,7 @@
     font-size: var(--font-jumbo);
 }
 
-.form__input {
+#register .form__input {
     display: grid;
     flex-grow: 1;
     border: none;
@@ -35,7 +35,7 @@
     font-size: var(--font-medium);
     padding: var(--spacing-10) var(--spacing-5);
 }
-.form__box--grid {
+#register .form__box--grid {
     
     display: grid;
     grid-template-columns: 1fr 1fr;
