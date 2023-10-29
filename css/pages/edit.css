@@ -1,0 +1,35 @@
+#edit {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--spacing-36);
+    margin: var(--spacing-68) auto;
+}
+
+.naruto     {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-36);
+}
+
+.naruto__column     {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;   
+     
+}
+
+.naruto__img    {
+    margin-top: var(--spacing-36);
+    width: 150px;
+    height: 150px;
+}
+
+.naruto__text__frenteydorso     {
+    color: #000;
+    font-family: var(--alternative-font);
+    font-size: var(--font-small);
+    font-weight: 500;
+}
