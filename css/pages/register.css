@@ -26,7 +26,10 @@
     font-family: var(--alternative-font);
     font-size: var(--font-jumbo);
 }
-
+.register_subtitle{
+    font-family: var(--alternative-font);
+    font-size: var(--font-large);
+}
 #register .form__input {
     display: grid;
     flex-grow: 1;
