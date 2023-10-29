@@ -45,7 +45,7 @@ header {
 .navbar__menu {
     display: flex;
     align-items: center;
-    gap: var(--spacing-240);
+    gap: var(--spacing-12);
   }
 
 .navbar__item {
