@@ -95,7 +95,7 @@ header {
 }
 
 .navbar__item:hover .submenu {
-    display: flex;
+    display: block;
     /* o block, según sea necesario */
 
 }
