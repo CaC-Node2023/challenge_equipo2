@@ -12,13 +12,17 @@
 
     --dark-solid: #1F1F1F;
     --dark-900: rgba(31, 31, 31, 0.9);  /*1F1F1FE5*/
+    --dark-800: rgba(31, 31, 31, 0.8);
+    --dark-700: rgba(31, 31, 31, 0.7);
     --dark-600: rgba(31, 31, 31, 0.6);  /*1F1F1F99*/
     --dark-500: rgba(31, 31, 31, 0.5);  /*1F1F1F7F*/
     --dark-300: rgba(31, 31, 31, 0.3);  /*1F1F1F4C*/
+    --dark-100: rgb(31, 31, 31, 0.1);
 
     --dark-bg-solid: #30343F;
     --light-bg-solid: #FAFAFF;
     --light-font-solid: #ffffff;
+    --gray-font-solid: #747474;
 
     /* Typography */
     --base-font: 'Inter', sans-serif;
@@ -27,6 +31,7 @@
     /* Font-sizes  */ 
     --font-display: 4.6em;
     --font-jumbo: 3.8em;
+    --font-xxlarge: 3.2em;
     --font-xlarge: 3em;
     --font-large: 2.4em;
     --font-large800: 2em;
