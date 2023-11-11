@@ -29,8 +29,8 @@
         </nav>
     </header> <!-- FIN HEADER -->
     <main id="edit" class="container">
-        <h2 class="create__title">EDITAR ITEM</h2>
-        <form class="create__form" action="/create" method="POST" enctype="application/x-www-form-urlencoded">
+        <h2 class="edit__title">EDITAR ITEM</h2>
+        <form class="edit__form" action="/create" method="POST" enctype="application/x-www-form-urlencoded">
             <div class="form__flex form__product-family">
                 <div class="form__box--flex">
                     <label class="form__label" for="category">Categoría:</label>
@@ -57,7 +57,7 @@
                 <input class="form__input create__form__input--large" type="text" name="name" id="name" placeholder="Kakashi Hatake Shippuden Saga" required>
             </div>
             <div>
-                <textarea name="description" id="description" cols="30" rows="10" placeholder="Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori." required></textarea>
+                <textarea id="edit__textarea" name="description" id="description" cols="30" rows="10" placeholder="Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori." required></textarea>
             </div>
             <div class="form__flex">
                 <div class="form__box--flex">
@@ -93,22 +93,22 @@
                 <label class="form__label" for="pictures">Imágenes:</label>
                 <input type="file" name="pictures" id="pictures" multiple required>
             </div>
-           <ul class="naruto"><!--Inicio Frente y dorso -->
-                <li class="naruto__column">
+           <ul class="edit__pictures"><!--Inicio Frente y dorso -->
+                <li class="edit__picture">
                     <picture class="form__input">
                         <a href="../../img/naruto/kakashi_hatake_front.png">
-                            <img class="form naruto__img" src="../../img/naruto/kakashi_hatake_front.png" alt="Imagen de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
+                            <img class="form edit__img" src="../../img/naruto/kakashi_hatake_front.png" alt="Imagen de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
                         </a>
                     </picture>
-                        <p class="naruto__text__frenteydorso">Frente</p>
+                        <p class="edit__picture__title">Frente</p>
                 </li>
-                <li class="naruto__column">
+                <li class="edit__picture">
                     <picture class="form__input">
                          <a href="../../img/naruto/kakashi_hatake_back.png">
-                            <img class="form naruto__img" src="../../img/naruto/kakashi_hatake_back.png" alt="Imagen de la caja de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
+                            <img class="form edit__img" src="../../img/naruto/kakashi_hatake_back.png" alt="Imagen de la caja de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
                         </a>
                     </picture>
-                        <p class="naruto__text__frenteydorso">Dorso</p>
+                        <p class="edit__picture__title">Dorso</p>
                 </li>
             </ul> <!--Fin Frente y dorso -->
             <div class="form__flex">
