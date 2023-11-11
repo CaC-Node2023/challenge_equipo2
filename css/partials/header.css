@@ -49,7 +49,7 @@ header {
   }
 
 .navbar__item {
-    display: inline-block;
+   /* display: inline-block;*/
     margin-right: var(--spacing-24);
     position: relative;
 
