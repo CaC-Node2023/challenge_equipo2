@@ -73,9 +73,11 @@ Es posible probar la aplicación desde [acá][demo-url].
 * Introducción
     * [Introducción al Challenge Integrador](doc/intro.pdf)
 * Consignas
-    * [Mission#1](doc/mission1.pdf)
-    * [Mission#2 - Estilos con CSS](doc/mission2.pdf)
-    * [Mission#3 - Manejando el DOM](doc/mission3.pdf)
+    * [Mission#1 - ¡Arrancamos con la primera misión!](doc/mission1.pdf)
+    * [Mission#2 - ¡Continuamos trabajando en nuestro proyecto!](doc/mission2.pdf)
+    * [Mission#3 - ¡Preparamos todo antes de comenzar con el Backend!](doc/mission3.pdf)
+    * [Mission#4 - ¡Manos a la obra con nuestro servidor!](doc/mission4.pdf)
+    * [Mission#5 - ¡Llegó la hora del contenido dinámico!](doc/mission5.pdf)
 
 
 
