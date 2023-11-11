@@ -1,10 +1,7 @@
-.shop-collection__items {
+.card-item__cover {
     display: flex;
-        
-    }
-    .card-item__img--front{
-        width: 350px;
-    }
+    position: relative;
+}
     
     .card-item__content{
         font-family:'Raleway', sans-serif; 
@@ -14,15 +11,11 @@
     .card-item__tag{
         background-color:var(--primary-solid);
         color:var(--light-font-solid);
-        font-size:1.2em;
-        padding: 5px 17px; 
-        margin-top: 20px;
-        font-family:'Raleway', sans-serif;
-        font-weight:600;
-        border: none; 
-        box-shadow: none;
-        float: right;
+        font-size:var(--font-xsmall);
+        padding: var(--spacing-8) var(--spacing-12);
         text-transform: uppercase;
+        position: absolute;
+        right: 0;
     }
     
     
@@ -59,8 +52,6 @@
     }
     .cards-description{
         font-size: 25px;
-        font-weight: none;
-     
     }
     .cards img{
         max-width: 100%;
@@ -72,4 +63,19 @@
   margin: 30px 0px 30px 0px;
    
  
+}
+
+.card-item__cover img {
+    animation: fade 0.7s;
+}
+
+.card-item__img--back {
+    display: none;
+}
+
+.card-item__cover:hover .card-item__img--back {
+    display: block;
+}
+.card-item__cover:hover .card-item__img--front {
+    display: none;
 }
