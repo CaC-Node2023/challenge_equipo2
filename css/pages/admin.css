@@ -78,12 +78,11 @@
     gap: var(--spacing-16);
 }
 
-.product__content button {
-    background-color: var(--light-bg-solid);
-    border: var(--light-bg-solid);
+#admin button {
+    background: none;
+    border: none;
 }
 
-.product__content button:hover {
-    background-color: var(--dark-bg-solid);
-    color: var(--light-bg-solid);
+#admin button:hover {
+    cursor: pointer;
 }

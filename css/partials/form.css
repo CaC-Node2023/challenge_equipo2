@@ -40,7 +40,7 @@ textarea::placeholder {
     justify-content: center;
     align-items: center;
 
-    gap: var(--spacing-16);
+    gap: var(--spacing-48);
 }
 
 .form__btn {
@@ -55,7 +55,7 @@ textarea::placeholder {
     color: var(--secondary-300);
 }
 
-.form__remember {
+.form__checkbox-container {
     display: flex;
     align-items: center;
 

@@ -1,16 +1,7 @@
 
 .btn {
     border: none;
-    cursor: pointer; 
-    margin-top:20px;
-    font-family:'Raleway', sans-serif; 
- 
-}
-.hero__link{
-    background-color:--light-bg-solid;
-    color:var(--dark-solid);
-    border-radius: 15px;
-
+    cursor: pointer;
 }
 
 /* COLORS */
@@ -32,8 +23,7 @@
     border-radius: 30px;
 
 }
-.btn--dark:hover,
-.hero__link:hover {
+.btn--dark:hover {
     background-color: var(--primary-solid);
 }
 
