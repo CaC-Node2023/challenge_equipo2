@@ -50,18 +50,16 @@
                 <p  class="aside_title">BUSCAR</p>
                     <input class=" filter"type="text" placeholder="item o categoria"> 
                 <p class="aside_title">ORDENAR POR</p>
-                    <select class="aside_order filter" name="" id="" placeholder="Mayor a menor">
-                        <option value=""></option>
-                        <option value="">tesaaaaaaaaaaaaaaaaat</option>
-                        <option value="">test</option>
+                    <select class="aside_order filter" name="" id=""  >
+                        <option value="" disabled selected>Mayor a menor</option>
                     </select>
                 <p class="aside_title">PRECIO</p>
                 <div class="aside_precio">
                     <p>MIN</p>
-                        <input type="number" class="filter" placeholder="0"> 
+                        <input type="text" class="filter" placeholder="0"> 
                         <p>-</p>
                     <p>MAX</p>
-                        <input type="number" class="filter" placeholder="0">       
+                        <input type="text" class="filter" placeholder="0">       
                 </div>
                 <p class="aside_title">FILTRAR</p>
                     <div class="aside_filter">
@@ -90,7 +88,7 @@
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
                                 <img class="card-item__img--back"src="../../img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de un stormtrooper en caja">
-                                <!-- <img class="card-item__img--front"src="../../img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de un stormtrooper"> -->
+                                <img class="card-item__img--front"src="../../img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de un stormtrooper">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence"> STAR WARS</p>
@@ -107,7 +105,7 @@
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
                                 <img class="card-item__img--back"src="../../img/pokemon/pidgeotto-box.webp" alt="Figura de Pidgeotto de Pokemon en caja">
-                                <!-- <img class="card-item__img--front"src="../../img/pokemon/pidgeotto-1.webp" alt="Figura de Pidgeotto de Pokemon"> -->
+                                <img class="card-item__img--front"src="../../img/pokemon/pidgeotto-1.webp" alt="Figura de Pidgeotto de Pokemon">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence"> POKEMON</p>
@@ -124,7 +122,7 @@
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
                                 <img class="card-item__img--back"src="../../img/harry-potter/luna-box.webp "alt="Figura de Luna de la Pelicula de Harry Potter en caja">
-                                <!-- <img class="card-item__img--front"src="../../img/harry-potter/luna-1.webp" alt="Figura de Luna de la Pelicula de Harry Potter"> -->
+                                <img class="card-item__img--front"src="../../img/harry-potter/luna-1.webp" alt="Figura de Luna de la Pelicula de Harry Potter"> 
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence"> HARRY POTTER</p>
@@ -239,13 +237,13 @@
                 </li>
             </ul>
             <div class="pagination">
-                <a class="pagination__link" href="#" ><</a>
+                <a class="pagination__link after" href="#" ><</a>
                 <a class="pagination__link pagination__link--selected" href="#" >1</a>
                 <a class="pagination__link" href="#" >2</a>
                 <a class="pagination__link" href="#" >3</a>
                 <a class="pagination__link" href="#" >4</a>
                 <a class="pagination__link" href="#" >5</a>
-                <a class="pagination__link" href="#" >></a>
+                <a class="pagination__link next" href="#" >></a>
             </div>
         </section>
     </main>

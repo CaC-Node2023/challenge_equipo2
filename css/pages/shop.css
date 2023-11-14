@@ -58,11 +58,38 @@
 }
 
 .filter{
-    padding: 0.5rem;
+    
     border-radius: 0.5rem;
     border: solid 3px;
+    padding: 0.5rem;
 }
 
 .pagination{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-xsmall);
+    padding: 3rem;
+    gap:var(--spacing-12);  
+    
 }
+
+.pagination__link:hover{
+    border:0.1px solid var(--primary-900);
+    color: var(--primary-900);
+    
+}
+
+
+.pagination .pagination__link.after:hover,
+.pagination .pagination__link:last-child:hover {
+    background: var(--gray-font-solid); 
+    border: 0px solid var(--gray-font-solid);
+    color: var(--light-bg-solid);
+    padding: 0.8rem;
+}
+.pagination__link{
+    border: 2px solid var(--light-bg-solid);
+    padding: 0.8rem;
+}
+
+
