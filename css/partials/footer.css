@@ -1,0 +1,21 @@
+footer {
+    padding: var(--spacing-68);
+    background-color: var(--dark-bg-solid);
+}
+.footer-container{
+    flex-wrap: wrap;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+
+}
+
+.footer__copy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}

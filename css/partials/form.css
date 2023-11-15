@@ -1,0 +1,93 @@
+/* ELEMENTOS COMUNES A TODOS LOS FORMS */
+
+textarea {
+    width: 100%;
+}
+
+textarea::placeholder {
+    color: var(--dark-300);
+}
+
+.form__box--grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+
+    gap: var(--spacing-16);
+}
+
+.form__label {
+    font-size: var(--font-large);
+    font-weight: 600;
+    letter-spacing: var(--spacing-1);
+}
+
+.form__input {
+    flex-grow: 1;
+
+    border: none;
+    border-bottom: var(--spacing-2) solid var(--primary-solid);
+    font-size: var(--font-medium);
+    padding: var(--spacing-10) var(--spacing-5);
+}
+
+.form__input:focus {
+    outline: 0;
+}
+
+.form__submission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: var(--spacing-48);
+}
+
+.form__btn {
+    font-size: var(--font-xsmall);
+}
+
+.form__link {
+    color: var(--secondary-solid);
+}
+
+.form__link:hover {
+    color: var(--secondary-300);
+}
+
+.form__checkbox-container {
+    display: flex;
+    align-items: center;
+
+    font-size: var(--font-medium);
+    gap: var(--spacing-8);
+}
+
+.form__flex {
+    display: flex;
+
+    justify-content: flex-start;
+    gap: var(--spacing-36);
+}
+
+.form__box--flex {
+    display: flex;
+    align-items: center;
+
+    gap: var(--spacing-12);
+}
+
+.form__select {
+    border: 2px solid var(--dark-solid);
+    border-radius: 6px;
+    font-size: var(--font-large800);
+    padding: var(--spacing-8);
+}
+
+.form__input--wrapper {
+    display: flex;
+}
+
+.form__input--wrapper .form__input {
+    width: 100%;
+}

@@ -1,0 +1,55 @@
+#register{
+    margin: var(--spacing-68) auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--spacing-36);
+}
+.register__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--spacing-36);
+
+    max-width: 800px; /* Puedes ajustar el valor según tus preferencias */
+    margin: 0 auto; /* Esto centrará el elemento en la página */
+}
+.register__header{
+    align-items: center;
+    gap: var(--spacing-18);
+    display: flex;
+    flex-direction: column;
+}
+
+.register_title{
+    font-family: var(--alternative-font);
+    font-size: var(--font-jumbo);
+}
+.register_subtitle{
+    font-family: var(--alternative-font);
+    font-size: var(--font-large);
+}
+#register .form__input {
+    display: grid;
+    flex-grow: 1;
+    border: none;
+    border-bottom: solid var(--primary-solid);
+    font-size: var(--font-medium);
+    padding: var(--spacing-10) var(--spacing-5);
+}
+#register .form__box--grid {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+}
+
+
+#register .label{
+    font-size: x-small;
+}
+
+

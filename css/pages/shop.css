@@ -2,6 +2,7 @@
 .shop-container{
     display: flex;
     margin-top:var(--spacing-68) ;
+    gap:var(--spacing-24);
 
 }
 
@@ -18,3 +19,77 @@
 .shop-collection___content{
     gap: var(--spacing-24);
 }
+
+.aside_shop{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+    padding: 3rem;
+    margin:0 auto;
+}
+
+
+
+.aside_title{
+    font-size: var(--font-large800);
+    font-weight: 500;
+}
+
+.aside_precio{
+    display: flex;
+    gap: var(--spacing-8);
+    justify-content: space-between;
+}
+
+.aside_precio input{
+    Width:4rem;
+    Height:2rem;
+    text-align: center;
+    margin:0 auto;
+    padding: 1rem;
+
+   
+}
+
+.aside_filter{
+    display: flex;
+    font-size: 0.9rem;
+    gap:0.4rem;
+}
+
+.filter{
+    
+    border-radius: 0.5rem;
+    border: solid 3px;
+    padding: 0.5rem;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-xsmall);
+    padding: 3rem;
+    gap:var(--spacing-12);  
+    
+}
+
+.pagination__link:hover{
+    border:0.1px solid var(--primary-900);
+    color: var(--primary-900);
+    
+}
+
+
+.pagination .pagination__link.after:hover,
+.pagination .pagination__link:last-child:hover {
+    background: var(--gray-font-solid); 
+    border: 0px solid var(--gray-font-solid);
+    color: var(--light-bg-solid);
+    padding: 0.8rem;
+}
+.pagination__link{
+    border: 2px solid var(--light-bg-solid);
+    padding: 0.8rem;
+}
+
+

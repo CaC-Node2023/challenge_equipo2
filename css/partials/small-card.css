@@ -1,0 +1,79 @@
+.card-item__cover {
+    display: flex;
+    position: relative;
+}
+    
+    .card-item__content{
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-12);
+        padding: var(--spacing-16);
+    }
+    .card-item__tag{
+        background-color:var(--primary-solid);
+        color:var(--light-font-solid);
+        font-size:var(--font-xsmall);
+        padding: var(--spacing-8) var(--spacing-12);
+        text-transform: uppercase;
+        position: absolute;
+        right: 0;
+    }
+    
+    
+    .card-item__licence{
+    font-weight: 500;
+    font-size: var(--font-xsmall);
+    }
+    .card-item__name{
+        font-size: var(--font-medium);
+        font-weight: 700;
+    }
+    .card-items__price{
+        font-size: var(--font-small);
+    }
+    .card-item__promo{
+        font-size: var(--font-xsmall);
+        color: var(--secondary-solid);
+        font-weight: 700;
+    }
+    /*CARDS YODA*/
+    .cards{
+        font-family:'Raleway', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .cards-name{
+        font-size: 46px;
+        font-weight: 500;
+        text-transform: uppercase;   
+    }
+    .cards-description{
+        font-size: 25px;
+    }
+    .cards img{
+        max-width: 100%;
+    }
+    /*SEPARADOR*/
+.line{
+    border-top: 3.5px solid var(--primary-solid);
+    width:600px;
+  margin: 30px 0px 30px 0px;
+   
+ 
+}
+
+.card-item__cover img {
+    animation: fade 0.7s;
+}
+
+.card-item__img--back {
+    display: none;
+}
+
+.card-item__cover:hover .card-item__img--back {
+    display: block;
+}
+.card-item__cover:hover .card-item__img--front {
+    display: none;
+}

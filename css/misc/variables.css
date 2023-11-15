@@ -1,47 +1,61 @@
-:root{
-    /*Pallete*/
-    --primary-solid:#FF3333; /* var(--primary-solid);*/
-    --primary-900:rgba(255, 51, 51,0.9);
-    --primary-500:rgba(255, 51, 51,0.5);
-    --primary-300:rgba(255, 51, 51,0.3);
+:root {
+    /* Palette */
+    --primary-solid: #FF3333; /* var(--primary-solid);*/
+    --primary-900: rgba(255, 51, 51, 0.9);  /*FF3333E5*/
+    --primary-500: rgba(255, 51, 51, 0.5);  /*FF33337F*/
+    --primary-300: rgba(255, 51, 51, 0.3);  /*FF33334C*/
 
-    --secondary-solid:#1D84B5;
-    --secondary-900:rgba(29, 132, 181, 0.9);
-    --secondary-500:rgba(29, 132, 181, 0.5);
-    --secondary-300:rgba(29, 132, 181, 0.3);
+    --secondary-solid: #1D84B5;
+    --secondary-900: rgba(29, 132, 181, 0.9);   /*1D84B5E5*/
+    --secondary-500: rgba(29, 132, 181, 0.5);   /*1D84B57F*/
+    --secondary-300: rgba(29, 132, 181, 0.3);   /*1D84B54C*/
 
+    --dark-solid: #1F1F1F;
+    --dark-900: rgba(31, 31, 31, 0.9);  /*1F1F1FE5*/
+    --dark-800: rgba(31, 31, 31, 0.8);
+    --dark-700: rgba(31, 31, 31, 0.7);
+    --dark-600: rgba(31, 31, 31, 0.6);  /*1F1F1F99*/
+    --dark-500: rgba(31, 31, 31, 0.5);  /*1F1F1F7F*/
+    --dark-300: rgba(31, 31, 31, 0.3);  /*1F1F1F4C*/
+    --dark-100: rgb(31, 31, 31, 0.1);
 
-    --dark-solid:#1F1F1F;
-    --dark-900:rgba(31, 31, 31, 0.9);
-    --dark-500:rgba(31, 31, 31, 0.5);
-    --dark-300:rgba(31, 31, 31, 0.3);
+    --dark-bg-solid: #30343F;
+    --light-bg-solid: #FAFAFF;
+    --light-font-solid: #ffffff;
+    --gray-font-solid: #747474;
 
-    --dark-bg-solid:#30343F;
-    --light-bg-solid:#FAFAFF;
-    --light-font-solid:#ffffff;
-
-    /* Typografy */
-    --base-font : 'Inter', sans-serif;
-    --alternative-font : 'Raleway', sans-serif;
+    /* Typography */
+    --base-font: 'Inter', sans-serif;
+    --alternative-font: 'Raleway', sans-serif;
 
     /* Font-sizes  */ 
-    --font-display : 4.6em;
-    --font-jumbo : 3.8em;
-    --font-xlarge : 3em;
-    --font-large : 2.4em;
-    --font-medium : 1.8em;
-    --font-small : 1.6em;
-    --font-xsmall : 1.2em;
+    --font-display: 4.6em;
+    --font-jumbo: 3.8em;
+    --font-xxlarge: 3.2em;
+    --font-xlarge: 3em;
+    --font-large: 2.4em;
+    --font-large800: 2em;
+    --font-medium: 1.8em;
+    --font-small: 1.6em;
+    --font-xsmall: 1.4em;
 
     /* Spacing */
-    --spacing-240:24rem;
-    --spacing-128:12.8rem;
+    --spacing-240: 24rem;
+    --spacing-128: 12.8rem;
     --spacing-68: 6.8rem;
+    --spacing-48: 4.8rem;
     --spacing-36: 3.6rem;
     --spacing-28: 2.8rem;
-    --spacing-24 :2.4rem;
+    --spacing-24: 2.4rem;
     --spacing-20: 2rem;
-    --spacing-16:1.6rem;
-    --spacing-12:1.2rem;
+    --spacing-18: 1.8rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-10: 1rem;
     --spacing-8: 0.8rem;
+    --spacing-6: 0.6rem;
+    --spacing-5: 0.5rem;
+    --spacing-4: 0.4rem;
+    --spacing-2: 0.2rem;
+    --spacing-1: 0.1rem;
 }

@@ -1,9 +1,16 @@
-.container{
+.container {
     max-width: 1200px;
     margin: 0 auto;
 }
-.with-icon{
+
+.with-icon {
     display: flex;
     align-items: center;
-    gap:var(--spacing-8)
+    gap: var(--spacing-8)
+}
+
+.grid-fixed {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }

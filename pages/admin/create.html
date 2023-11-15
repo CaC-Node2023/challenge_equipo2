@@ -1,103 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar container">
-            <picture class="navbar__logo">
-                <a href="../index.html">
-                    <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
-                </a>
-            </picture>
-            <ul class="navbar__menu">
-                
-                <li class="navbar__item">
-                    <a href="../shop/shop.html" class="navbar__link">VER TIENDA</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="admin.html" class="navbar__link">ADMIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="login.html"
-                     class="navbar__link">SALIR</a>
-                </li>
-                
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>CREAR NUEVO ITEM</h2>
-            <form action="">
-                <label for="">Categoría</label>
-                <select name="articulo">
-                    <optgroup label="Categorias">
-                      <option value="Pokemon">Pokemon</option>
-                      <option value="Harry Potter">Harry Potter</option>                     
-                    </optgroup>
-                    
-                  </select>
-                  <label for="">Licencia:</label>
-                <select name="articulo">
-                    <optgroup label="Licencia">
-                      <option value=""></option>
-                      <option value=""></option>                     
-                    </optgroup>                                   
-                  </select>
-                  <label for="">Nombre del producto:</label> 
-                  <p>Kakashi Hatake Shippuden Saga</p>
-                  <textarea name="comentarios" rows="5" cols="60" readonly>
-                    Descripcion del producto
-                    </textarea> 
-                    <label for="">SKU:</label> 
-                    <p>SSK111AB001</p>
-                    <label for="">Precio:</label> 
-                    <p>$0.000,00</p>
-                    <label for="">Stock:</label> 
-                    <p>0</p>
-                    <label for="">Descuento:</label> 
-                    <p>0%</p>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/index.css">
+        <title>Create</title>
+    </head>
+    <body>
+        <!-- INICIO HEADER -->
+        <header>
+            <nav class="navbar container">
+                <picture class="navbar__logo">
+                    <a href="../../index.html">
+                        <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
+                    </a>
+                </picture>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="../../index.html" class="navbar__link">VER TIENDA</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../pages/admin/admin.html" class="navbar__link">ADMIN</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../pages/admin/login.html" class="navbar__link">SALIR</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- FIN HEADER -->
+        <!-- INICIO MAIN -->
+        <main id="create" class="container">
+            <h2 class="create__title">CREAR NUEVO ITEM</h2>
+            <form class="create__form" action="/create" method="POST" enctype="application/x-www-form-urlencoded">
 
-                <label for="">CUOTAS:</label> 
-                <select name="Pago">
-                    <optgroup label="forma de Pagos">
-                      <option value="">3 cuota sin interés</option>                                          
-                    </optgroup>                                   
-                  </select>  
-                 <label for="Imagenes">Imagenes:</label>
-                 <input type="file" name="imagenes">
-                 <button type="submit">Agregar Producto</button>
-                <button type="reset">Limpiar</button>
+                <div class="form__flex form__product-family">
+                    <div class="form__box--flex">
+                        <label class="form__label" for="category">Categoría:</label>
+                        <select class="form__select" name="category" id="category" required>
+                            <option value="" disabled selected hidden>Seleccionar</option>
+                            <option value="funkos">Funkos</option>
+                            <option value="remeras">Remeras</option>
+                            <option value="llaveros">Llaveros</option>
+                        </select>
+                    </div>
+
+                    <div class="form__box--flex">
+                        <label class="form__label" for="license">Licencia:</label>
+                        <select class="form__select" name="license" id="license" required>
+                            <option value="" disabled selected hidden>Seleccionar</option>
+                            <option value="starwars">Star Wars</option>
+                            <option value="pokemon">Pokemon</option>
+                            <option value="harrypotter">Harry Potter</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form__box--flex">
+                    <label class="form__label" for="name">Nombre del producto:</label>
+                    <input class="form__input create__form__input--large" type="text" name="name" id="name" placeholder="Kakashi Hatake Shippuden Saga" required>
+                </div>
+
+                <div>
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
+                </div>
+
+                <div class="form__flex">
+                    <div class="form__box--flex">
+                        <label class="form__label" for="sku">SKU:</label>
+                        <input class="form__input create__form__input--mid" type="text" name="sku" id="sku" placeholder="SSK111AB001" required>
+                    </div>
+
+                    <div class="form__box--flex">
+                        <label class="form__label" for="price">Precio:</label>
+                        <div class="form__input--wrapper"><input class="form__input create__form__input--mid" type="text" name="price" id="price" placeholder="$ 0.000,00" required></div>
+                    </div>
+
+                    <div class="form__box--flex">
+                        <label class="form__label" for="stock">Stock:</label>
+                        <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="stock" id="stock" placeholder="0" required></div>
+                    </div>
+                </div>
+
+                <div class="form__flex">
+                    <div class="form__box--flex">
+                        <label class="form__label" for="discount">Descuento:</label>
+                        <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="discount" id="discount" placeholder="0%" required></div>
+                    </div>
+
+                    <div class="form__box--flex">
+                        <label class="form__label" for="installments">Cuotas:</label>
+                        <select class="form__select" name="installments" id="installments" required>
+                            <option value="" disabled selected hidden>Seleccionar</option>
+                            <option value="1">Contado</option>
+                            <option value="3">3 cuotas sin interés</option>
+                            <option value="6">6 cuotas con interés</option>
+                            <option value="12">12 cuotas con mucho interés</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form__box--flex">
+                    <label class="form__label" for="pictures">Imágenes:</label>
+                    <input type="file" name="pictures" id="pictures" multiple required>
+                </div>
+
+                <div class="form__flex">
+                    <input class="form__btn btn btn--primary btn--large" type="submit" value="Agregar Producto">
+                    <input class="form__btn btn btn--primary btn--large" type="reset" value="Limpiar">
+                </div>
+
             </form>
-        </section>
-    </main>
-    <footer>
-        <nav class="navbar container">
-            <ul class="navbar__items">
-                <li  class="navbar__item">
-                    <a  class="navbar__link" href="../shop/shop.html">SHOP</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="register.html">REGISTRARSE</a>
-                </li>
-                <li class="navbar__item">
-                    <a  class="navbar__link"href="login.html">LOGIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="contact.html">CONTACTO</a>
-                </li>
-            </ul>
-            <picture>   
-                <img src="../../img/branding/isotype.svg" alt="isologotipo de la Marca FunkoShop">
-            </picture>
-
-        </nav>
-    <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
-</footer> 
-
-
-</body>
+        </main>
+        <!-- FIN MAIN -->
+        <!-- INICIO FOOTER -->
+        <footer>
+            <nav class="navbar container">
+                <ul class="navbar__items">
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="../shop/shop.html">VER TIENDA</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="../../pages/admin/admin.html">ADMIN</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__link" href="../../pages/shop/contact.html">CONTACTO</a>
+                    </li>
+                </ul>
+                <picture>
+                    <img src="../../img/branding/isotype.svg" alt="">
+                </picture>
+            </nav>
+            <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+        </footer>
+        <!-- FIN FOOTER -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    </body>
 </html>
