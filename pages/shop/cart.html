@@ -80,12 +80,12 @@
 
                         <div class="table__column column__quantity">
                             <div class="cart__item__quantity">
-                                <input type="number" class="item__quantity__input" id="number" value="2">
+                                <input type="number" class="item__quantity__input" id="cart-item1__qty" value="2">
                                 <div class="item__quantity__buttons">
-                                    <button class="item__quantity__button btn" id="increment">
+                                    <button class="item__quantity__button btn" id="increment_1">
                                         <img src="../../img/icons/+.svg" alt="Símbolo de suma">
                                     </button>
-                                    <button class="item__quantity__button btn" id="decrement">
+                                    <button class="item__quantity__button btn" id="decrement_1">
                                         <img src="../../img/icons/-.svg" alt="Símbolo de resta">
                                     </button>
                                 </div>
@@ -93,11 +93,11 @@
                         </div>
 
                         <div class="table__column column__total">
-                            <p class="table__row__price">3599.98</p>
+                            <p class="table__row__price" id="cart-item1__qty-price">3599.98</p>
                         </div>
 
                         <div class="table__column column__remove">
-                            <button class="item__remove__button btn" id="remove">
+                            <button class="item__remove__button btn" id="remove1">
                                 <img src="../../img/icons/gg_close-o.svg" alt="Ícono de borrado">
                             </button>
                         </div>
@@ -124,12 +124,12 @@
 
                         <div class="table__column column__quantity">
                             <div class="cart__item__quantity">
-                                <input type="number" class="item__quantity__input" id="number" value="1">
+                                <input type="number" class="item__quantity__input" id="cart-item2__qty" value="1">
                                 <div class="item__quantity__buttons">
-                                    <button class="item__quantity__button btn" id="increment">
+                                    <button class="item__quantity__button btn" id="increment_2">
                                         <img src="../../img/icons/+.svg" alt="Símbolo de suma">
                                     </button>
-                                    <button class="item__quantity__button btn" id="decrement">
+                                    <button class="item__quantity__button btn" id="decrement_2">
                                         <img src="../../img/icons/-.svg" alt="Símbolo de resta">
                                     </button>
                                 </div>
@@ -137,11 +137,11 @@
                         </div>
 
                         <div class="table__column column__total">
-                            <p class="table__row__price">1799.99</p>
+                            <p class="table__row__price" id="cart-item2__qty-price">1799.99</p>
                         </div>
 
                         <div class="table__column column__remove">
-                            <button class="item__remove__button btn" id="remove">
+                            <button class="item__remove__button btn" id="remove2">
                                 <img src="../../img/icons/gg_close-o.svg" alt="Ícono de borrado">
                             </button>
                         </div>
@@ -155,11 +155,11 @@
                 <ul class="summary__table">
                     <li class="summary__table__row">
                         <p class="summary__text__left">Cantidad de Elementos</p>
-                        <p class="summary__text__right">3</p>
+                        <p class="summary__text__right" id="summary__qty">3</p>
                     </li>
                     <li class="summary__table__row">
                         <p class="summary__text__left">Subtotal</p>
-                        <p class="summary__text__right">$ 5.399,97</p>
+                        <p class="summary__text__right" id="summary__subtotal">$ 5.399,97</p>
                     </li>
                     <li class="summary__table__row">
                         <p class="summary__text__left">Envío</p>
@@ -167,7 +167,7 @@
                     </li>
                     <li class="summary__table__row">
                         <p class="summary__text__left">Total</p>
-                        <p class="summary__text__right">$5.399,97</p>
+                        <p class="summary__text__right" id="summary__total">$5.399,97</p>
                     </li>
                 </ul>
 
@@ -197,5 +197,6 @@
         </footer>
         <!-- FIN FOOTER -->
         <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+        <script src="../../js/cart.js"></script>
     </body>
 </html>
