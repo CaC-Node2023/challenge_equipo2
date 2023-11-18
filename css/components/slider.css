@@ -1,3 +1,4 @@
+@import url(../misc/variables.css);
 /* SLIDER */
 .slider {
   display: flex;
@@ -23,4 +24,9 @@
 
 .glide__arrow--right {
   right: 0;
+}
+
+.glide__slides{
+  flex-direction: row;
+    display: flex;
 }
