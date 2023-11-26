@@ -53,7 +53,7 @@
 ## Acerca del proyecto
 
 <!--[![FUNKOSHOP][product-screenshot]]-->
-<img src="img/funkos-banner.webp" alt="FUNKOSHOP" height="300"> 
+<img src="public/img/funkos-banner.webp" alt="FUNKOSHOP" height="300"> 
 
 El sitio consta de **2 partes fundamentales**, en primer lugar la tienda en línea donde los clientes podrán ver todos los productos disponibles, conocer su precio, stock y características. Además podrán registrarse para agregar sus productos favoritos al carrito y ver el subtotal que deben pagar.
 
