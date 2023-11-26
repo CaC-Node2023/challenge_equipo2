@@ -1,0 +1,21 @@
+{
+  "name": "challenge_equipo2",
+  "version": "1.0.0",
+  "description": "[![Contributors][contributors-shield]][contributors-url]\r [![Forks][forks-shield]][forks-url]\r [![Stargazers][stars-shield]][stars-url]\r [![MIT License][license-shield]][license-url]\r <!-- PROJECT LOGO -->\r <br />\r <p align=\"center\">\r   <a href=\"https://github.com/CaC-Node2023/challenge_equipo2\"><img src=\"https://avatars.githubusercontent.com/u/143467476\" alt=\"Logo\" width=\"160\" height=\"160\"></a>\r   <h4 align=\"center\">Codo a Codo 4.0</h4>\r   <h1 align=\"center\">Challenge Integrador: FUNKOSHOP</h1>\r   <h2 align=\"center\">Fullstack Node JS (23567)</h2>\r   <h3 align=\"center\">2do Cuatri 2023</h3>\r   <p align=\"center\"><a href=\"https://github.com/CaC-Node2023/challenge_equipo2\"><strong>Explorar los documentos »</strong></a>\r </p>",
+  "main": "app.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
