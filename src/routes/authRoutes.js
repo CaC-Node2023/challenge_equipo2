@@ -1,20 +1,12 @@
 const express = require('express');
 const router = express();
 
-router.get('/login', (req, res) => {
-    res.send('Esta ruta devuelve la página para iniciar sesión.')
-})
-router.post('/login', (req, res) => {
-    res.send('Esta ruta manda la solicitud de inicio de sesión.')
-})
-router.get('/register', (req, res) => {
-    res.send('Esta ruta devuelve la página para registrarse.')
-})
-router.post('/register', (req, res) => {
-    res.send('Esta ruta manda la solicitud de registro con los datos del usuario.')
-})
-router.get('/logout', (req, res) => {
-    res.send('Esta ruta trata de cerrar la sesión actual y redirecciona a la página de inicio.')
-})
+const authControllers = require('../controllers/authControllers');
+
+router.get('/login', authControllers.login);
+router.post('/login', authControllers.loginUser);
+router.get('/register', authControllers.register);
+router.post('/register', authControllers.registerUser);
+router.get('/logout', authControllers.logoutUser);
 
 module.exports = router;

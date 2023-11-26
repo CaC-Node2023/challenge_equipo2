@@ -1,18 +1,11 @@
 const express = require('express');
 const router = express();
 
+const mainControllers = require ('../controllers/mainControllers');
 
-router.get('/home', (req, res) => {
-    res.send('Esta ruta devuelve la página home.')
-})
-router.get('/contact', (req, res) => {
-    res.send('Esta ruta devuelve la página de contacto.')
-})
-router.get('/about', (req, res) => {
-    res.send('Esta ruta devuelve la página "Acerca de".')
-})
-router.get('/faqs', (req, res) => {
-    res.send('Esta ruta devuelve la página "Preguntas frecuentes".')
-})
+router.get('/home', mainControllers.home);
+router.get('/contact', mainControllers.contact);
+router.get('/about', mainControllers.about);
+router.get('/faqs', mainControllers.faqs);
 
 module.exports = router;
