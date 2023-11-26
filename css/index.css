@@ -12,7 +12,8 @@
 
 @import url('./misc/animations.css');
 
-
+/** SLIDERS **/
+@import url('./components/slider.css');
 
 /** PARTIALS **/
 

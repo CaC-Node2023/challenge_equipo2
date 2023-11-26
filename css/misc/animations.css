@@ -1,10 +1,24 @@
 /* ANIMATION */
 @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
-  
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* son cositas del slider*/
+
+.slide {
+  display: none;
+}
+
+#slider-home,
+#slider-item {
+  width: 100%;
+  max-width: 600px;
+  /* Puedes ajustar el tamaño según tus necesidades */
+  margin: 0 auto;
+}
