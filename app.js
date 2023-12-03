@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 //requerimos la dependencia
 require('dotenv').config();
@@ -11,6 +12,10 @@ const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const authRoutes = require('./src/routes/authRoutes');
+
+//template engines:
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './src/views'));
 
 app.use(express.static('public'));
 
