@@ -1,15 +1,21 @@
 const adminControllers = {
     admin: (req, res) => {
-        res.send('Esta ruta devuelve la página del administrador.')
+        res.render('admin/admin', {
+            title: 'Funkoshop | Administrador',
+        })
     },
     create: (req, res) => {
-        res.send('Esta ruta devuelve la página para crear un ítem.')
+        res.render('admin/create', {
+            title: 'Funkoshop | Crear',
+        })
     },
     createItem: (req, res) => {
         res.send('Esta ruta trata de agregar un ítem de la base de datos.')
     },
     edit: (req, res) => {
-        res.send('Esta ruta devuelve la página para editar un ítem.')
+        res.render('admin/edit', {
+            title: 'Funkoshop | Editar',
+        })
     },
     editItem: (req, res) => {
         res.send('Esta ruta trata de actualizar la información de un ítem en la base de datos.')
@@ -19,5 +25,5 @@ const adminControllers = {
     },
 }
 
- 
- module.exports = adminControllers;
+module.exports = adminControllers;
+``
