@@ -1,20 +1,30 @@
 const shopControllers = {
     shop: (req, res) => {
-        res.send('Esta ruta devuelve la página de la tienda.')
+        res.render('shop/shop', {
+            title: 'Funkoshop | Tienda',
+        })
     },
     item: (req, res) => {
-        res.send('Esta ruta devuelve la página del ítem.')
+        res.render('shop/item', {
+            title: 'Funkoshop | Item',
+        })
     },
     addItemToCart: (req, res) => {
         res.send('Esta ruta agrega un ítem al carrito.')
     },
     cart: (req, res) => {
-        res.send('Esta ruta devuelve la página del carrito.')
+        res.render('shop/cart', {
+            title: 'Funkoshop | Carrito',
+        })
     },
     checkout: (req, res) => {
         res.send('Esta ruta procesa el carrito.')
+    },
+    contact:(req, res) => {
+        res.render('shop/contact', {
+            title: 'Funkoshop | Contacto',
+        })
     }
 }
 
- 
- module.exports = shopControllers;
+module.exports = shopControllers;

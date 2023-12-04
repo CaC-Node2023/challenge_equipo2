@@ -1,21 +1,25 @@
 const authControllers = {
-
    login: (req, res) => {
-        res.send('Esta ruta devuelve la página para iniciar sesión.')
+       res.render('auth/login', {
+           title: 'Funkoshop | Inicio de sesión',
+       })
     },
    loginUser: (req, res) => {
         res.send('Esta ruta manda la solicitud de inicio de sesión.')
     },
     register: (req, res) => {
-        res.send('Esta ruta devuelve la página para registrarse.')
+        res.render('auth/register', {
+            title: 'Funkoshop | Registro',
+        })
     },
     registerUser: (req, res) => {
         res.send('Esta ruta manda la solicitud de registro con los datos del usuario.')
     },
     logoutUser: (req, res) => {
-        res.send('Esta ruta trata de cerrar la sesión actual y redirecciona a la página de inicio.')
+        res.render('home', {
+            title: 'Funkoshop | Inicio',
+        })
     }
 }
 
- 
- module.exports = authControllers;
+module.exports = authControllers;
