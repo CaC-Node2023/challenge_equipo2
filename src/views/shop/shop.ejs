@@ -40,7 +40,7 @@
                 <% productos.forEach( producto => {  %>
                 <li class="slider__item">
                     <article class="shop-collection___content card-item">
-                        <a class="card-item__link" href="">
+                        <a class="card-item__link" href="/shop/item/<%= producto.product_id%>" id="<%= producto.product_id %>">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
                                 <img class="card-item__img--back" src=<%= producto.img_back %> alt=<%= producto.product_description + ' en caja' %>>
