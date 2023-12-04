@@ -1,7 +1,13 @@
+const fs = require('fs');
+const path = require('path')
+
 const adminControllers = {
     admin: (req, res) => {
+        const items = fs.readFileSync(path.resolve(__dirname, '../data/items.json'));
+        const productos = JSON.parse(items);
         res.render('admin/admin', {
             title: 'Funkoshop | Administrador',
+            productos
         })
     },
     create: (req, res) => {
