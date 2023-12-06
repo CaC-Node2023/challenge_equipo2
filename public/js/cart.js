@@ -16,6 +16,7 @@ const ItemPrice = 1799.99;
 
 incrementButton.addEventListener("click", function (event) {
   event.preventDefault();
+  console.log("se ejecuta el evento")
   incrementQuantity(qtyInput, cartItem1QtyPrice);
   updateCart();
 });
