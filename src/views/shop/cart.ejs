@@ -12,7 +12,7 @@
                         <p class="table__column column__total">TOTAL</p>
                         <p class="table__column column__remove"></p>
                     </li>
-                    <% productos.items.forEach( producto => {  %> 
+                    <% productos.items.forEach( (producto, index) => {  %>
                         <li class="cart__table__row">
                             <div class="table__column column__product">
                                 <article class="cart__item">
@@ -27,19 +27,19 @@
                                             <h2 class="cart__item__name"><%= producto.product_name.toUpperCase()%></h2>
                                             <p class="cart__item__license"><%= producto.licence_name%></p>
                                         </div>
-                                        <p class="cart__item__price"><%= producto.product_price%></p>
+                                        <p class="cart__item__price">$ <%= producto.product_price%></p>
                                     </div>
                                 </article>
                             </div>
 
                             <div class="table__column column__quantity">
                                 <div class="cart__item__quantity">
-                                    <input type="number" class="item__quantity__input" id="cart-item1__qty" value="<%= producto.cant%>" >
+                                    <input type="number" class="item__quantity__input" id="cart-item<%= index+1%>__qty" value="<%= producto.cant%>" >
                                     <div class="item__quantity__buttons">
-                                        <button class="item__quantity__button btn" id="increment_1">
+                                        <button class="item__quantity__button btn" id="increment_<%= index+1%>">
                                             <img src="../../img/icons/+.svg" alt="Símbolo de suma">
                                         </button>
-                                        <button class="item__quantity__button btn" id="decrement_1">
+                                        <button class="item__quantity__button btn" id="decrement_<%= index+1%>">
                                             <img src="../../img/icons/-.svg" alt="Símbolo de resta">
                                         </button>
                                     </div>
@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="table__column column__total">
-                                <p class="table__row__price" id="cart-item1__qty-price"><%=producto.product_total%></p>
+                                <p class="table__row__price" id="cart-item<%= index+1%>__qty-price">$ <%=producto.product_total%></p>
                             </div>
 
                             <div class="table__column column__remove">
@@ -70,19 +70,20 @@
                     </li>
                     <li class="summary__table__row">
                         <p class="summary__text__left">Subtotal</p>
-                        <p class="summary__text__right" id="summary__subtotal">$<%=productos.subtotal%></p>
+                        <p class="summary__text__right" id="summary__subtotal">$ <%=productos.subtotal%></p>
                     </li>
                     <li class="summary__table__row">
                         <p class="summary__text__left">Envío</p>
-                        <p class="summary__text__right">$ <%=productos.envio%></p>
+                        <p class="summary__text__right" id="summary__shipment">$ <%=productos.envio%></p>
                     </li>
                     <li class="summary__table__row">
                         <p class="summary__text__left">Total</p>
-                        <p class="summary__text__right" id="summary__total">$<%=productos.total%></p>
+                        <p class="summary__text__right" id="summary__total">$ <%=productos.total%></p>
                     </li> 
                 </ul>
 
                 <input class="btn btn--primary btn--large" type="submit" value="IR A PAGAR">
             </section>
         </main>
+        <script src="../js/cart.js"></script>
         <%- include('../partials/footer') %>
