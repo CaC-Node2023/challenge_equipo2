@@ -19,8 +19,11 @@ const shopControllers = {
         res.send('Esta ruta agrega un ítem al carrito.')
     },
     cart: (req, res) => { 
+        const items = fs.readFileSync(path.resolve(__dirname, '../data/cart.json'));
+        const productos = JSON.parse(items);
         res.render('shop/cart', {
             title: 'Funkoshop | Carrito',
+            productos,
         })
     },
     checkout: (req, res) => {
