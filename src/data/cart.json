@@ -9,8 +9,8 @@
             "cant": 2,
             "product_total" : 3599.98,
             "product_sku": "STW001001",
-            "img_front": "../img/star-wars/baby-yoda-1.webp",
-            "img_back": "../img/star-wars/baby-yoda-box.webp"
+            "img_front": "img/star-wars/baby-yoda-1.webp",
+            "img_back": "img/star-wars/baby-yoda-box.webp"
 
         },
         {
@@ -23,8 +23,8 @@
             "cant": 1,
             "product_total" : 1799.99,
             "product_sku": "STW001002",
-            "img_front": "../img/star-wars/bobbafeth-1.webp",
-            "img_back": "../img/star-wars/bobbafeth-box.webp"
+            "img_front": "img/star-wars/bobbafeth-1.webp",
+            "img_back": "img/star-wars/bobbafeth-box.webp"
         }
 	],
 "cant_total" : 3,

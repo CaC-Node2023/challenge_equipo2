@@ -1,0 +1,33 @@
+{
+    "products": [{
+        "product_id": 4,
+        "product_name": "STORMTROOPER LIGHTSABER",
+        "product_description": "Figura Coleccionable Funko de un Stormtrooper de Star Wars",
+        "price": 1799.99,
+        "dues": 3,
+        "image_front": "img/star-wars/trooper-1.webp",
+        "image_back": "img/star-wars/trooper-box.webp",
+        "create_time": "2020-01-01 00:00:01",
+        "licence_name": "STAR WARS"
+    }, {
+        "product_id": 7,
+        "product_name": "PIDGEOTTO",
+        "product_description": "Figura Coleccionable Funko de un Pidgeotto de Pokemon",
+        "price": 1799.99,
+        "dues": 3,
+        "image_front": "img/pokemon/pidgeotto-1.webp",
+        "image_back": "img/pokemon/pidgeotto-box.webp",
+        "create_time": "2022-01-01 00:00:01",
+        "licence_name": "POKEMON"
+    }, {
+        "product_id": 12,
+        "product_name": "LUNA LOVEGOOD LION MASK",
+        "product_description": "Figura Coleccionable Funko de LUNA LOVEGOOD LION MASK de Harry Potter",
+        "price": 1799.99,
+        "dues": 3,
+        "image_front": "img/harry-potter/luna-1.webp",
+        "image_back": "img/harry-potter/luna-box.webp",
+        "create_time": "2023-01-01 00:00:01",
+        "licence_name": "HARRY POTTER"
+    }]
+}

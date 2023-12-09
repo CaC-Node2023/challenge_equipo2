@@ -63,7 +63,9 @@ En segundo lugar, se necesita contar con las vistas necesarias para administrar 
 
 
 ### Demo en vivo
-Es posible probar la aplicación desde [acá][demo-url].
+Se puede ver la página web estática (hasta la misión 3) desde [acá][pages-url].
+
+La última versión estable de la aplicación se puede probar en [Render][render-url].
 
 
 
@@ -78,6 +80,7 @@ Es posible probar la aplicación desde [acá][demo-url].
     * [Mission#3 - ¡Preparamos todo antes de comenzar con el Backend!](doc/mission3.pdf)
     * [Mission#4 - ¡Manos a la obra con nuestro servidor!](doc/mission4.pdf)
     * [Mission#5 - ¡Llegó la hora del contenido dinámico!](doc/mission5.pdf)
+    * [Mission#6 - ¡Datos reales hacen aplicaciones reales!](doc/mission6.pdf)
 
 
 
@@ -91,4 +94,5 @@ Es posible probar la aplicación desde [acá][demo-url].
 [stars-url]: https://github.com/CaC-Node2023/challenge_equipo2/stargazers
 [license-shield]: https://img.shields.io/github/license/CaC-Node2023/challenge_equipo2
 [license-url]: #
-[demo-url]: https://cac-node2023.github.io/challenge_equipo2/
+[pages-url]: https://cac-node2023.github.io/challenge_equipo2/
+[render-url]: https://challenge-equipo2.onrender.com/
