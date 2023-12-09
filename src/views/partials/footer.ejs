@@ -2,15 +2,24 @@
 <footer>
     <nav class="navbar container">
         <ul class="navbar__items">
+        <% if (false) { %>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/shop">VER TIENDA</a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/admin">ADMIN</a>
+            </li>
+        <% } else { %>
             <li class="navbar__item">
                 <a class="navbar__link" href="/shop">SHOP</a>
             </li>
             <li class="navbar__item">
-                <a class="navbar__link" href="/auth/login">INGRESAR</a>
+                <a class="navbar__link" href="/auth/register">REGISTRARSE</a>
             </li>
             <li class="navbar__item">
                 <a class="navbar__link" href="shop/contact">CONTACTO</a>
             </li>
+        <% } %>
         </ul>
         <picture>
             <img src="../img/branding/isotype.svg" alt="">
