@@ -6,9 +6,16 @@ const mainControllers = {
         const home = fs.readFileSync(path.resolve(__dirname, '../data/home.json'));
         const licences = JSON.parse(home).licences;
 
+        const sliderJson = fs.readFileSync(path.resolve(__dirname, '../data/slider.json'));
+        const slider = {
+            title: 'Últimos lanzamientos',
+            products: JSON.parse(sliderJson).products
+        };
+
         res.render('home', {
             title: 'Funkoshop | Inicio',
-            licences
+            licences,
+            slider
         })
     },
 
