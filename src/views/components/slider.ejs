@@ -10,9 +10,9 @@
                             <% if (new Date(product.create_time).getFullYear() === new Date().getFullYear()) { %>
                             <span class="card-item__tag">NUEVO</span>
                             <% } %>
-                            <img class="card-item__img--front" src="<%= product.image_front %>"
+                            <img class="card-item__img--front" src="/<%= product.image_front %>"
                                  alt="<%= product.product_description %>" />
-                            <img class="card-item__img--back" src="<%= product.image_back %>"
+                            <img class="card-item__img--back" src="/<%= product.image_back %>"
                                  alt="<%= product.product_description %> en caja" />
                         </picture>
                         <div class="card-item__content">
