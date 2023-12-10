@@ -1,34 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../css/index.css">
-    <title>Edit</title>
-</head>
-<body>
-    <header> <!-- INICIO HEADER -->
-        <nav class="navbar container">
-            <picture class="navbar__logo">
-                <a href="../../index.html">
-                    <img src="../../img/branding/logo_light_horizontal.svg" alt="isologotipo de la Marca FunkoShop">
-                </a>
-            </picture>
-            <ul class="navbar__menu">
-                <li class="navbar__item">
-                    <a href="../../index.html" class="navbar__link">VER TIENDA</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="../../pages/admin/admin.html" class="navbar__link">ADMIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="../../pages/admin/login.html" class="navbar__link">SALIR</a>
-                </li>
-            </ul>
-        </nav>
-    </header> <!-- FIN HEADER -->
+<%- include('../partials/header') %>
     <main id="edit" class="container">
         <h2 class="edit__title">EDITAR ITEM</h2>
-        <form class="edit__form" action="/create" method="POST" enctype="application/x-www-form-urlencoded">
+        <form class="edit__form" action="/admin/edit/<%= product.product_id%>" method="PUT" enctype="multipart/form-data">
             <div class="form__flex form__product-family">
                 <div class="form__box--flex">
                     <label class="form__label" for="category">Categoría:</label>
@@ -52,29 +25,29 @@
             </div>
             <div class="form__box--flex">
                 <label class="form__label" for="name">Nombre del producto:</label>
-                <input class="form__input create__form__input--large" type="text" name="name" id="name" placeholder="Kakashi Hatake Shippuden Saga" required>
+                <input class="form__input create__form__input--large" type="text" name="name" id="name" value="<%- product.product_name %>" required>
             </div>
             <div>
-                <textarea id="edit__textarea" name="description" id="description" cols="30" rows="10" placeholder="Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori." required></textarea>
+                <textarea id="edit__textarea" name="description" id="description" cols="30" rows="10" required><%- product.product_description %></textarea>
             </div>
             <div class="form__flex">
                 <div class="form__box--flex">
                     <label class="form__label" for="sku">SKU:</label>
-                    <input class="form__input create__form__input--mid" type="text" name="sku" id="sku" placeholder="NAR001012" required>
+                    <input class="form__input create__form__input--mid" type="text" name="sku" id="sku" value="<%- product.product_sku %>" required>
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="price">Precio:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--mid" type="text" name="price" id="price" placeholder="$ 1.799,00" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--mid" type="text" name="price" id="price" value="$ <%- product.product_price %>" required></div>
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="stock">Stock:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="stock" id="stock" placeholder="10" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="stock" id="stock" value="<%- product.dues %>" required></div>
                 </div>
             </div>
             <div class="form__flex">
                 <div class="form__box--flex">
                     <label class="form__label" for="discount">Descuento:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="discount" id="discount" placeholder="10%" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="discount" id="discount" value="<%- product.dues %>%" required></div>
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="installments">Cuotas:</label>
@@ -94,16 +67,16 @@
            <ul class="edit__pictures"><!--Inicio Frente y dorso -->
                 <li class="edit__picture">
                     <picture class="form__input">
-                        <a href="../../img/naruto/kakashi_hatake_front.png">
-                            <img class="form edit__img" src="../../img/naruto/kakashi_hatake_front.png" alt="Imagen de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
+                        <a href="/<%= product.img_front%>">
+                            <img class="form edit__img" src="/<%= product.img_front%>" alt="Imagen de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
                         </a>
                     </picture>
                         <p class="edit__picture__title">Frente</p>
                 </li>
                 <li class="edit__picture">
                     <picture class="form__input">
-                         <a href="../../img/naruto/kakashi_hatake_back.png">
-                            <img class="form edit__img" src="../../img/naruto/kakashi_hatake_back.png" alt="Imagen de la caja de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
+                        <a href="/<%= product.img_back%>">
+                            <img class="form edit__img" src="/<%= product.img_back%>" alt="Imagen de la caja de Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori.">
                         </a>
                     </picture>
                         <p class="edit__picture__title">Dorso</p>
@@ -114,25 +87,4 @@
             </div>
         </form>
     </main>
-    <footer> <!-- INICIO FOOTER -->
-        <nav class="navbar container">
-            <ul class="navbar__items">
-                <li class="navbar__item">
-                    <a class="navbar__link" href="../shop/shop.html">VER TIENDA</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="../../pages/admin/admin.html">ADMIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="../../pages/shop/contact.html">CONTACTO</a>
-                </li>
-            </ul>
-            <picture>
-                <img src="../../img/branding/isotype.svg" alt="">
-            </picture>
-        </nav>
-        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
-    </footer> <!-- FIN FOOTER -->
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-</body>
-</html>
+<%- include('../partials/footer') %>
