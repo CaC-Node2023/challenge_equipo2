@@ -19,8 +19,15 @@ const adminControllers = {
         res.send('Esta ruta trata de agregar un ítem de la base de datos.')
     },
     edit: (req, res) => {
+        let products, product;
+        const itemJson = fs.readFileSync(path.resolve(__dirname, '../data/items.json'));
+        products = JSON.parse(itemJson);
+
+        product = products.find(product => product.product_id === parseInt(req.params.id));
+
         res.render('admin/edit', {
             title: 'Funkoshop | Editar',
+            product
         })
     },
     editItem: (req, res) => {
