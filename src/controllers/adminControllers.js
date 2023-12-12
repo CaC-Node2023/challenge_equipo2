@@ -1,3 +1,4 @@
+const { name } = require('ejs');
 const fs = require('fs');
 const path = require('path')
 
@@ -11,8 +12,15 @@ const adminControllers = {
         })
     },
     create: (req, res) => {
+        const createJson = fs.readFileSync(path.resolve(__dirname, '../data/create.json'));
+        const content = JSON.parse(createJson);
+        let categories = content.categories;
+        let licences = content.licences;
+
         res.render('admin/create', {
             title: 'Funkoshop | Crear',
+            categories,
+            licences
         })
     },
     createItem: (req, res) => {
