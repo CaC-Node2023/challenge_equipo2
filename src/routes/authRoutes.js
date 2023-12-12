@@ -1,9 +1,12 @@
-const path = require('path');
+const express = require('express');
+const router = express.Router();
 
-module.exports = { 
-    login : (req, res) => res.render(path.resolve(__dirname, '../views/auth/login.ejs')),
-    doLogin : (req, res) => res.send('Esta es la ruta que valida los datos de LOGIN'),
-    register : (req, res) => res.render(path.resolve(__dirname, '../views/auth/register.ejs')),
-    doRegister: (req, res) => res.send('Esta es la ruta que CREA un NUEVO USUARIO'),
-    logout : (req, res) => res.send('Esta es la ruta que deslogea o cierra la sesion del usuario'),
-}
+const authControllers = require('../controllers/authControllers');
+
+router.get('/login', authControllers.login);
+router.post('/login', authControllers.loginUser);
+router.get('/register', authControllers.register);
+router.post('/register', authControllers.registerUser);
+router.get('/logout', authControllers.logoutUser);
+
+module.exports = router;
