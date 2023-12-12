@@ -61,6 +61,10 @@ const shopControllers = {
         res.render('shop/contact', {
             title: 'Funkoshop | Contacto',
         })
+    },
+
+    submitInquiry:(req, res) => {
+        res.send('Esta ruta es para enviar la consulta a la tienda.')
     }
 }
 
