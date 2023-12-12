@@ -1,0 +1,25 @@
+{
+    "licences": [{
+        "id": 1,
+        "name": "Pokemon"
+    }, {
+        "id": 2,
+        "name": "Star Wars"
+    }, {
+        "id": 3,
+        "name": "Harry Potter"
+    }, {
+        "id": 4,
+        "name": "Naruto"
+    }],
+    "categories": [{
+        "id": 1,
+        "name": "Funkos"
+    }, {
+        "id": 2,
+        "name": "Remeras"
+    }, {
+        "id": 3,
+        "name": "Llaveros"
+    }]
+}
