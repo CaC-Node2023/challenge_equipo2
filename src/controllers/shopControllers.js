@@ -1,14 +1,22 @@
 const fs = require('fs');
 const path = require('path');
+const {getProducts} = require("../models/product.model");
 
 const shopControllers = {
-    shop: (req, res) => {
-        const items = fs.readFileSync(path.resolve(__dirname, '../data/items.json'));
-        const products = JSON.parse(items).slice(0, 9);
-        res.render('shop/shop', {
-            title: 'Funkoshop | Tienda',
-            products: products
-        });
+    shop: async  (req, res) => {
+
+        const data = await getProducts();
+        const products = data.slice(0, 9);
+        if (products.error) {
+            res.send(404);
+        } else {
+            
+            res.render('shop/shop', {
+                title: 'Funkoshop | Tienda',
+                products: products
+            });
+        }
+
     },
 
     item: (req, res) => {
