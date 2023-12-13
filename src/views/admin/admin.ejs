@@ -13,9 +13,11 @@
                 </article>
                 <article class="add__product__list">
                     <h4>AGREGAR</h4>
-                    <button class="btn" id="add">
-                        <img src="/img/icons/add_icon.svg" alt="add">
-                    </button>
+                    <form action="/admin/create" method="GET">
+                        <button class="btn" id="add">
+                            <img src="/img/icons/add_icon.svg" alt="add">
+                        </button>
+                    </form>
                 </article>
             </section>
         </div>
@@ -29,22 +31,26 @@
                 </ul>
             </section>
             <section>
-                <% productos.forEach( producto => {  %>
+                <% products.forEach( product => {  %>
                 <article class="product__content">
                     <ul>
-                        <li><%= producto.product_id %></li>
-                        <li><%= producto.product_sku %></li>
-                        <li><%= producto.product_name %></li>
-                        <li><%= producto.licence_name %></li>
+                        <li><%= product.product_id %></li>
+                        <li><%= product.product_sku %></li>
+                        <li><%= product.product_name %></li>
+                        <li><%= product.licence_name %></li>
                         <li>
-                            <button>
-                                <img src="/img/icons/edit_pencil.svg" alt="edit">
-                            </button>
+                            <form action="/admin/edit/<%= product.product_id %>" method="GET">
+                                <button type="submit">
+                                    <img src="/img/icons/edit_pencil.svg" alt="edit">
+                                </button>
+                            </form>
                         </li>
                         <li>
-                            <button>
-                                <img src="/img/icons/delete_trash.svg" alt="delete">
-                            </button>
+                            <form action="/admin/delete/<%= product.product_id %>?_method=DELETE" method="POST">
+                                <button type="submit">
+                                    <img src="/img/icons/delete_trash.svg" alt="delete">
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </article>
@@ -53,4 +59,3 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
-

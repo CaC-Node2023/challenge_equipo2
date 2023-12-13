@@ -16,15 +16,15 @@ const mainControllers = {
             title: 'Funkoshop | Inicio',
             licences,
             slider
-        })
+        });
     },
 
     about:(req, res) => {
-        res.send('Esta ruta devuelve la página "Acerca de".')
+        res.send('Esta ruta devuelve la página "Acerca de".');
     },
 
     faqs: (req, res) => {
-        res.send('Esta ruta devuelve la página "Preguntas frecuentes".')
+        res.send('Esta ruta devuelve la página "Preguntas frecuentes".');
     }
 }
 
