@@ -1,0 +1,22 @@
+{
+    "licences": [
+        {
+            "licence_id": 1,
+            "licence_name": "Star Wars & The Mandalorian",
+            "licence_description": "Disfruta de una saga que sigue agregando personajes a su colección.",
+            "licence_image": "/img/star-wars/baby-yoda-1.webp"
+        },
+        {
+            "licence_id": 2,
+            "licence_name": "Pokémon Indigo",
+            "licence_description": "Atrapa todos los que puedas y disfruta de una colección llena de amigos.",
+            "licence_image": "/img/pokemon/vulpix-1.webp"
+        },
+        {
+            "licence_id": 3,
+            "licence_name": "Harry Potter",
+            "licence_description": "Revive los recuerdos de una saga llena de magia y encanto.",
+            "licence_image": "/img/harry-potter/snape-patronus-1.webp"
+        }
+    ]
+}

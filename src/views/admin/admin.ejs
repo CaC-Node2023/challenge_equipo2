@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+    <main id="admin" class="container">
+        <div class="title__container">
+            <section>
+                <form action="search" class="search__bar">
+                    <img src="/img/icons/search_icon.svg" alt="search_icon">
+                    <input type="search" name="product_list" placeholder="código, nombre o categoría" size="50">
+                </form>
+            </section>
+            <section class="list__title">
+                <article class="title__product__list">
+                    <h2>LISTADO DE PRODUCTOS</h2>
+                </article>
+                <article class="add__product__list">
+                    <h4>AGREGAR</h4>
+                    <form action="/admin/create" method="GET">
+                        <button class="btn" id="add">
+                            <img src="/img/icons/add_icon.svg" alt="add">
+                        </button>
+                    </form>
+                </article>
+            </section>
+        </div>
+        <div class="main__container">
+            <section class="product__atributes">
+                <ul>
+                    <li>ID</li>
+                    <li>Código</li>
+                    <li>Nombre del producto</li>  
+                    <li>Categoría</li>
+                </ul>
+            </section>
+            <section>
+                <% products.forEach( product => {  %>
+                <article class="product__content">
+                    <ul>
+                        <li><%= product.product_id %></li>
+                        <li><%= product.product_sku %></li>
+                        <li><%= product.product_name %></li>
+                        <li><%= product.licence_name %></li>
+                        <li>
+                            <form action="/admin/edit/<%= product.product_id %>" method="GET">
+                                <button type="submit">
+                                    <img src="/img/icons/edit_pencil.svg" alt="edit">
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/admin/delete/<%= product.product_id %>?_method=DELETE" method="POST">
+                                <button type="submit">
+                                    <img src="/img/icons/delete_trash.svg" alt="delete">
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </article>
+                <% }); %>
+            </section>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>

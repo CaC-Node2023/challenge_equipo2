@@ -1,0 +1,31 @@
+<%- include('../partials/header')%>
+    <!-- INICIO MAIN -->
+    <main class="main-container">
+        <section class="item container">
+            <picture class="item__cover">
+                <img src="<%= product.img_front %>" alt="<%= product.product_description %>" />
+            </picture>
+            <div class="item__content">
+                <p class="item__licence"><%= product.licence_name %></p>
+                <h4 class="item__name"><%= product.product_name %></h4>
+                <p class="item__description"><%= product.product_description %></p>
+                <p class="item__price">$ <%= product.product_price %></p>
+                <div class="item_flex">
+                    <div class="item__quantity">
+                        <!-- este <p> conceptualmente podria ser un input pero creo que no hay necesidad -->
+                        <p class="item__qty-value" id="itemQtyValue">1</p>
+                        <div class="item__qty-mod">
+                            <a href="#" class="item-qty__btn" id="increaseItem">+</a>
+                            <a href="#" class="item-qty__btn" id="decreaseItem">-</a>
+                        </div>
+                    </div>
+                    <a class="item-addCart__btn" href="/shop/item/<%= product.product_id %>/add" id="addCart">Agregar al Carrito</a>
+                </div>
+                <p class="item__promo"><a class="item__link" href="">Ver métodos de pago</a> - <%= product.dues %> CUOTAS SIN INTERÉS</p>
+            </div>
+        </section>
+        <%- include('../components/slider')%>
+    </main>
+    <!-- FIN MAIN -->
+<script src="/js/item.js"></script>
+<%- include('../partials/footer')%>

@@ -1,0 +1,34 @@
+{"items" : [
+        {
+            "product_id": 1,
+            "licence_name": "STAR WARS",
+            "category_name": "Figuras coleccionables",
+            "product_name": "Baby Yoda Blueball",
+            "product_description": "Figura Coleccionable Funko de un Baby Yoda Blueball de Star Wars",
+            "product_price": 1799.99,
+            "cant": 2,
+            "product_total" : 3599.98,
+            "product_sku": "STW001001",
+            "img_front": "/img/star-wars/baby-yoda-1.webp",
+            "img_back": "/img/star-wars/baby-yoda-box.webp"
+
+        },
+        {
+            "product_id": 2,
+            "licence_name": "STAR WARS",
+            "category_name": "Figuras coleccionables",
+            "product_name": "Boba Fett Fighter",
+            "product_description": "Figura Coleccionable Funko de Boba Fett Fighter de Star Wars",
+            "product_price": 1799.99,
+            "cant": 1,
+            "product_total" : 1799.99,
+            "product_sku": "STW001002",
+            "img_front": "/img/star-wars/bobbafeth-1.webp",
+            "img_back": "/img/star-wars/bobbafeth-box.webp"
+        }
+	],
+"cant_total" : 3,
+"subtotal" : 5399.97,
+"envio" :400,
+"total" : 5799.97
+}

@@ -1,0 +1,31 @@
+<%- include('partials/header')%>
+    <!-- INICIO HERO -->
+    <section class="hero">
+        <article class="hero__content container">
+            <h3 class="hero__title">Nuevos Ingresos</h3>
+            <p class="hero__text">Descubrí el próximo Funko Pop de tu colección</p>
+            <a class="hero__link" href="/shop">SHOP</a>
+        </article>
+    </section>
+    <!-- FIN HERO -->
+
+    <!-- INICIO MAIN -->
+    <main class="container">
+        <% licences.forEach( licence => { %>
+        <section class="collection container">
+            <article class="collection__content">
+                <h3 class="collection__title"><%= licence.licence_name %></h3>
+                <p class="collection__synopsis"><%= licence.licence_description %></p>
+                <div class="line"></div>
+                <a class="btn btn--dark btn--large" href="/shop?licence=<%= licence.licence_id %>">VER COLECCIÓN</a>
+            </article>
+            <picture class="collection__picture">
+                <img src="<%= licence.licence_image %>" alt="Figura de <%= licence.licence_name %>.">
+            </picture>
+        </section>
+        <% }); %>
+
+        <%- include('components/slider')%>
+    </main>
+    <!-- FIN MAIN -->
+<%- include('partials/footer')%>

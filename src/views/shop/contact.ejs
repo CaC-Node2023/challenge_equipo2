@@ -1,0 +1,30 @@
+        <%- include ('../partials/header.ejs') %>
+        <!-- INICIO MAIN -->
+        <main id="contact" class="container">
+            <div class="contact__header">
+                <h2 class="contact__title">CONTACTO</h2>
+                <p class="contact__subtitle">Completá el formulario y responderemos a la brevedad</p>
+            </div>
+            <form class="contact__form" action="/shop/contact" method="POST" enctype="application/x-www-form-urlencoded">
+                <div class="form__box--grid">
+                    <label class="form__label" for="name">Nombre:</label>
+                    <input class="form__input" type="text" name="name" id="name" placeholder="Juan" required>
+                </div>
+                <div class="form__box--grid">
+                    <label class="form__label" for="lastname">Apellido:</label>
+                    <input class="form__input" type="text" name="lastname" id="lastname" placeholder="Pérez" required>
+                </div>
+                <div class="form__box--grid">
+                    <label class="form__label" for="email">Email:</label>
+                    <input class="form__input" type="email" name="email" id="email" placeholder="juanperez@mail.com" required>
+                </div>
+                <div>
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Tu consulta." required></textarea>
+                </div>
+                <div class="form__submission">
+                    <input class="btn btn--primary btn--large" type="submit" value="ENVIAR">
+                </div>
+            </form>
+        </main>
+        <!-- FIN MAIN -->
+        <%- include ('../partials/footer.ejs') %>

@@ -36,32 +36,6 @@
         color: var(--secondary-solid);
         font-weight: 700;
     }
-    /*CARDS YODA*/
-    .cards{
-        font-family:'Raleway', sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .cards-name{
-        font-size: 46px;
-        font-weight: 500;
-        text-transform: uppercase;   
-    }
-    .cards-description{
-        font-size: 25px;
-    }
-    .cards img{
-        max-width: 100%;
-    }
-    /*SEPARADOR*/
-.line{
-    border-top: 3.5px solid var(--primary-solid);
-    width:600px;
-  margin: 30px 0px 30px 0px;
-   
- 
-}
 
 .card-item__cover img {
     animation: fade 0.7s;

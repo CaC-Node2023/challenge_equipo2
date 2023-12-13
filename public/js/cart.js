@@ -10,12 +10,18 @@ const summaryQty = document.getElementById("summary__qty");
 const cartItem1QtyPrice = document.getElementById("cart-item1__qty-price");
 const cartItem2QtyPrice = document.getElementById("cart-item2__qty-price");
 const summarySubtotal = document.getElementById("summary__subtotal");
+
+const summaryShipmentElement = document.getElementById('summary__shipment');
+const summaryShipmentText = summaryShipmentElement.textContent;
+const summaryShipment = parseFloat(summaryShipmentText.replace('$', ''));
+
 const summaryTotal = document.getElementById("summary__total");
 
 const ItemPrice = 1799.99;
 
 incrementButton.addEventListener("click", function (event) {
   event.preventDefault();
+  console.log("se ejecuta el evento")
   incrementQuantity(qtyInput, cartItem1QtyPrice);
   updateCart();
 });
@@ -65,6 +71,7 @@ function updateCart() {
   const subtotal2 = qtyValue2 * ItemPrice;
   const totalQty = qtyValue1 + qtyValue2;
   const totalSubtotal = subtotal1 + subtotal2;
+  const totalTotal = totalSubtotal + summaryShipment;
 
   if (summaryQty) {
     summaryQty.textContent = totalQty;
@@ -75,6 +82,6 @@ function updateCart() {
   }
 
   if (summaryTotal) {
-    summaryTotal.textContent = `$ ${totalSubtotal.toFixed(2)}`;
+    summaryTotal.textContent = `$ ${totalTotal.toFixed(2)}`;
   }
 }

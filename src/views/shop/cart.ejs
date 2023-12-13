@@ -1,0 +1,91 @@
+<%- include('../partials/header') %>
+        <main id="cart" class="container">
+            <section class="cart__header">
+                <h2 class="cart__title">CARRITO DE COMPRAS</h2>
+            </section>
+
+            <section>
+                <ul class="cart__table">
+                    <li class="cart__table__header">
+                        <p class="table__column column__product">DETALLE DE PRODUCTO</p>
+                        <p class="table__column column__quantity">CANTIDAD</p>
+                        <p class="table__column column__total">TOTAL</p>
+                        <p class="table__column column__remove"></p>
+                    </li>
+                    <% products.items.forEach( (product, index) => {  %>
+                        <li class="cart__table__row">
+                            <div class="table__column column__product">
+                                <article class="cart__item">
+                                    <a class="cart__item__link" href="/shop/item/<%= product.product_id%>">
+                                        <picture class="cart__item__picture">
+                                            <img src=<%= product.img_front%> alt="<%= product.product_description%>">
+                                        </picture>
+                                    </a>
+
+                                    <div class="cart__item__detail">
+                                        <div class="cart__item__titles">
+                                            <h2 class="cart__item__name"><%= product.product_name.toUpperCase()%></h2>
+                                            <p class="cart__item__license"><%= product.licence_name%></p>
+                                        </div>
+                                        <p class="cart__item__price">$ <%= product.product_price%></p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="table__column column__quantity">
+                                <div class="cart__item__quantity">
+                                    <input type="number" class="item__quantity__input" id="cart-item<%= index+1%>__qty" value="<%= product.cant%>" >
+                                    <div class="item__quantity__buttons">
+                                        <button class="item__quantity__button btn" id="increment_<%= index+1%>">
+                                            <img src="/img/icons/+.svg" alt="Símbolo de suma">
+                                        </button>
+                                        <button class="item__quantity__button btn" id="decrement_<%= index+1%>">
+                                            <img src="/img/icons/-.svg" alt="Símbolo de resta">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table__column column__total">
+                                <p class="table__row__price" id="cart-item<%= index+1%>__qty-price">$ <%=product.product_total%></p>
+                            </div>
+
+                            <div class="table__column column__remove">
+                                <button class="item__remove__button btn" id="remove1">
+                                    <img src="/img/icons/gg_close-o.svg" alt="Ícono de borrado">
+                                </button>
+                            </div>    
+                        </li>
+                    <% }); %>  
+                </ul>
+            </section>
+
+            <section class="cart__summary">
+                <h2 class="cart__title summary__title">RESUMEN</h2>
+
+                <ul class="summary__table">
+                    <li class="summary__table__row">
+                        <p class="summary__text__left">Cantidad de Elementos</p>
+                        <p class="summary__text__right" id="summary__qty"><%=products.cant_total%></p>
+                    </li>
+                    <li class="summary__table__row">
+                        <p class="summary__text__left">Subtotal</p>
+                        <p class="summary__text__right" id="summary__subtotal">$ <%=products.subtotal%></p>
+                    </li>
+                    <li class="summary__table__row">
+                        <p class="summary__text__left">Envío</p>
+                        <p class="summary__text__right" id="summary__shipment">$ <%=products.envio%></p>
+                    </li>
+                    <li class="summary__table__row">
+                        <p class="summary__text__left">Total</p>
+                        <p class="summary__text__right" id="summary__total">$ <%=products.total%></p>
+                    </li> 
+                </ul>
+
+                <form action="/shop/cart" method="POST">
+                    <input class="btn btn--primary btn--large" type="submit" value="IR A PAGAR">
+                </form>
+            </section>
+        </main>
+        <script src="/js/cart.js"></script>
+        <%- include('../partials/footer') %>
