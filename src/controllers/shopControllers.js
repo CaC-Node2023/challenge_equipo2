@@ -4,11 +4,11 @@ const path = require('path');
 const shopControllers = {
     shop: (req, res) => {
         const items = fs.readFileSync(path.resolve(__dirname, '../data/items.json'));
-        const productos = JSON.parse(items);
+        const products = JSON.parse(items).slice(0, 9);
         res.render('shop/shop', {
             title: 'Funkoshop | Tienda',
-            productos
-        })
+            products: products
+        });
     },
 
     item: (req, res) => {
@@ -25,19 +25,19 @@ const shopControllers = {
             };
         } catch (e) {
             res.status(500);
-        }
+        };
 
         try {
             product = products.find(product => product.product_id === parseInt(req.params.id));
         } catch (e) {
             res.status(404);
-        }
+        };
 
         res.render('shop/item', {
             title: `Funkoshop | ${product.product_name}`,
             product,
             slider
-        })
+        });
     },
 
     addItemToCart: (req, res) => {
@@ -46,11 +46,11 @@ const shopControllers = {
 
     cart: (req, res) => { 
         const items = fs.readFileSync(path.resolve(__dirname, '../data/cart.json'));
-        const productos = JSON.parse(items);
+        const products = JSON.parse(items);
         res.render('shop/cart', {
             title: 'Funkoshop | Carrito',
-            productos,
-        })
+            products: products
+        });
     },
 
     checkout: (req, res) => {
@@ -60,7 +60,7 @@ const shopControllers = {
     contact:(req, res) => {
         res.render('shop/contact', {
             title: 'Funkoshop | Contacto',
-        })
+        });
     },
 
     submitInquiry:(req, res) => {
