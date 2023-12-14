@@ -2,7 +2,7 @@ const { conn } = require('../config/conn');
 
 const getLicences = async connection => {
     try {
-        const [ rows ] = await conn.query('SELECT * FROM product;');
+        const [ rows ] = await conn.query('SELECT * FROM licence;');
         return rows;
     } catch (error) {
         return {
