@@ -2,16 +2,16 @@ const { conn } = require('../config/conn');
 
 const getProducts = async () => {
     try {
-        const [ rows ] = await conn.query(  'SELECT' +
-                                                'product.*,' +
-                                                'licence.licence_name' +
-                                                'category.category_name' +
-                                            'FROM product' +
-                                            'INNER JOIN licence' +
-                                                'ON product.licence_id = licence.licence_id' +
-                                            'INNER JOIN category' +
-                                                'ON product.category_id = category.category_id' +
-                                            ';');
+        const [ rows ] = await conn.query(  'SELECT ' +
+                                                'product.*, ' +
+                                                'licence.licence_name, ' +
+                                                'category.category_name ' +
+                                            'FROM product ' +
+                                            'INNER JOIN licence ' +
+                                                'ON product.licence_id = licence.licence_id ' +
+                                            'INNER JOIN category ' +
+                                                'ON product.category_id = category.category_id ' +
+                                            'ORDER BY product.product_id;');
         return rows;
     } catch (error) {
         return {
@@ -23,7 +23,7 @@ const getProducts = async () => {
     }
 };
 
-const addProduct = async (request) => {
+const addProduct = async (params) => {
     try {
         const [ rows ] = await conn.query(  'INSERT INTO product' +
                                                 '(product_name,' +
@@ -37,7 +37,7 @@ const addProduct = async (request) => {
                                                 'img_back,' +
                                                 'category_id,' +
                                                 'licence_id)' +
-                                            'VALUES ?;', [request]);
+                                            'VALUES ?;', [params]);
         return rows;
     } catch (error) {
         return {
