@@ -49,7 +49,59 @@ const addProduct = async (params) => {
     }
 };
 
+const getOne = async (id) => {
+    try {
+        const [rows] = await conn.query( 
+            // 'SELECT * FROM product WHERE product_id = ?;', id
+            'SELECT product.*, category.category_name, licence.licence_name ' +
+            'FROM product ' +
+            'LEFT JOIN category ON product.category_id = category.category_id ' +
+            'LEFT JOIN licence ON product.licence_id = licence.licence_id ' +
+            'WHERE product_id = ?',
+            id
+        );
+        return rows;
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Hemos encontrado un error ' + error
+        };
+    } finally {
+        conn.releaseConnection();
+    }
+};
+const editProduct = async (params, id) => {
+    try { 
+        const [ rows ] = await conn.query('UPDATE product SET ? WHERE ?;', [params, id] );
+        return rows;
+    } catch (error) {
+        throw error;
+    } finally {
+        conn.releaseConnection()
+    }
+};
+
+const deleteOne = async (id) => {
+    try {
+        const [ rows ] = await conn.query( 'DELETE FROM product WHERE product_id = ?', id);
+        return rows;
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Hemos encontrado un error ' + error
+        }
+    } finally {
+        conn.releaseConnection()
+    }
+};
+
+
+
+
 module.exports = {
     getProducts,
-    addProduct
+    addProduct,
+    getOne,
+    editProduct,
+    deleteOne
 };
