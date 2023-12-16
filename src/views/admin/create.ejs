@@ -9,7 +9,7 @@
                         <select class="form__select" name="category" id="category" required>
                             <option value="" disabled selected hidden>Seleccionar</option>
                             <% categories.forEach( category => { %>
-                            <option value="<%= category.id %>"><%= category.name %></option>
+                            <option value="<%= category.category_id %>"><%= category.category_name %></option>
                             <% }); %>
                         </select>
                     </div>
@@ -19,7 +19,7 @@
                         <select class="form__select" name="license" id="license" required>
                             <option value="" disabled selected hidden>Seleccionar</option>
                             <% licences.forEach( licence => { %>
-                            <option value="<%= licence.id %>"><%= licence.name %></option>
+                            <option value="<%= licence.licence_id %>"><%= licence.licence_name %></option>
                             <% }); %>
                         </select>
                     </div>
