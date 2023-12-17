@@ -13,8 +13,8 @@
                     </select>
                 </div>
                 <div class="form__box--flex">
-                    <label class="form__label" for="license">Licencia:</label>
-                    <select class="form__select" name="license" id="license" required>
+                    <label class="form__label" for="licence">Licencia:</label>
+                    <select class="form__select" name="licence" id="licence" required>
                         <option value="" disabled hidden>Seleccionar</option>
                         <% licences.forEach(licence => { %>
                             <option value="<%= licence.licence_id %>" <% if (licence.licence_id === product.licence_id) { %> selected <% } %>><%= licence.licence_name %></option>
@@ -37,17 +37,17 @@
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="price">Precio:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--mid" type="number" name="price" id="price" value="<%- product.product_price %>" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--mid" type="number" name="price" id="price" step=".01" value="<%- product.product_price %>" required></div>
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="stock">Stock:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="number" name="stock" id="stock" value="<%- product.dues %>" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="number" name="stock" id="stock" value="<%- product.stock %>" required></div>
                 </div>
             </div>
             <div class="form__flex">
                 <div class="form__box--flex">
                     <label class="form__label" for="discount">Descuento:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="number" name="discount" id="discount" value="<%- product.dues %>" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="number" name="discount" id="discount" value="<%- product.discount %>" required></div>
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="installments">Cuotas:</label>
@@ -66,7 +66,7 @@
             </div>
             <div class="form__box--flex">
                 <label class="form__label" for="pictures">Imágenes:</label>
-                <input type="file" name="pictures" id="pictures" multiple >
+                <input type="file" name="pictures" id="pictures" accept="image/*" multiple>
             </div>
            <ul class="edit__pictures"><!--Inicio Frente y dorso -->
                 <li class="edit__picture">
