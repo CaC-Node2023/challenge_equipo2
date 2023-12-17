@@ -3,14 +3,15 @@ const { conn } = require('../config/conn');
 const getCategories = async connection => {
     try {
         const [ rows ] = await conn.query('SELECT * FROM category;');
-        return response = {
-            isError: false,
-            data: rows
-        };
+
+        return {
+            error: false,
+            rows
+        }
     } catch (error) {
-        return response = {
-            isError: true,
-            message: 'Hemos encontrado un error ' + error
+        return {
+            error: true,
+            message: 'Error al consultar la base de datos: ' + error
         }
     } finally {
         conn.releaseConnection()
