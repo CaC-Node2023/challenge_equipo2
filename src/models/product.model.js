@@ -12,11 +12,14 @@ const getProducts = async () => {
                                             'INNER JOIN category ' +
                                                 'ON product.category_id = category.category_id ' +
                                             'ORDER BY product.product_id;');
-        return rows;
+        return {
+            error: false,
+            rows
+        }
     } catch (error) {
         return {
             error: true,
-            message: 'Hemos encontrado un error ' + error
+            message: 'Error al consultar la base de datos: ' + error
         }
     } finally {
         conn.releaseConnection() 
@@ -38,11 +41,74 @@ const addProduct = async (params) => {
                                                 'category_id,' +
                                                 'licence_id)' +
                                             'VALUES ?;', [params]);
-        return rows;
+        return {
+            error: false,
+            rows
+        }
     } catch (error) {
         return {
             error: true,
-            message: 'Hemos encontrado un error ' + error
+            message: 'Error al consultar la base de datos: ' + error
+        }
+    } finally {
+        conn.releaseConnection()
+    }
+};
+
+const getOne = async (id) => {
+    try {
+        const [rows] = await conn.query(
+            'SELECT product.*, category.category_name, licence.licence_name ' +
+            'FROM product ' +
+            'LEFT JOIN category ON product.category_id = category.category_id ' +
+            'LEFT JOIN licence ON product.licence_id = licence.licence_id ' +
+            'WHERE product_id = ?',
+            id
+        );
+
+        return {
+            error: false,
+            rows
+        }
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Error al consultar la base de datos: ' + error
+        }
+    } finally {
+        conn.releaseConnection()
+    }
+};
+const editProduct = async (params, id) => {
+    try { 
+        const [ rows ] = await conn.query('UPDATE product SET ? WHERE ?;', [params, id] );
+
+        return {
+            error: false,
+            rows
+        }
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Error al consultar la base de datos: ' + error
+        }
+    } finally {
+        conn.releaseConnection()
+    }
+};
+
+const deleteOne = async (id) => {
+    try {
+        const [ rows ] = await conn.query( 'DELETE FROM product WHERE product_id = ?', id);
+
+        return {
+            error: false,
+            rows
+        }
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Error al consultar la base de datos: ' + error
         }
     } finally {
         conn.releaseConnection()
@@ -51,5 +117,8 @@ const addProduct = async (params) => {
 
 module.exports = {
     getProducts,
-    addProduct
+    addProduct,
+    getOne,
+    editProduct,
+    deleteOne
 };

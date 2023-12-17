@@ -25,14 +25,25 @@ textarea::placeholder {
 .form__input {
     flex-grow: 1;
 
+    appearance: none;   /* Remove default browser arrows */
     border: none;
     border-bottom: var(--spacing-2) solid var(--primary-solid);
     font-size: var(--font-medium);
     padding: var(--spacing-10) var(--spacing-5);
 }
 
+.form__input::-webkit-inner-spin-button,
+.form__input::-webkit-outer-spin-button {
+    -webkit-appearance: none;   /* Remove spin buttons in WebKit browsers */
+    appearance: none;
+}
+
 .form__input:focus {
     outline: 0;
+}
+
+.form__input::placeholder {
+    color: var(--dark-300);
 }
 
 .form__submission {

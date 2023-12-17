@@ -9,17 +9,17 @@
                         <select class="form__select" name="category" id="category" required>
                             <option value="" disabled selected hidden>Seleccionar</option>
                             <% categories.forEach( category => { %>
-                            <option value="<%= category.id %>"><%= category.name %></option>
+                            <option value="<%= category.category_id %>"><%= category.category_name %></option>
                             <% }); %>
                         </select>
                     </div>
 
                     <div class="form__box--flex">
-                        <label class="form__label" for="license">Licencia:</label>
-                        <select class="form__select" name="license" id="license" required>
+                        <label class="form__label" for="licence">Licencia:</label>
+                        <select class="form__select" name="licence" id="licence" required>
                             <option value="" disabled selected hidden>Seleccionar</option>
                             <% licences.forEach( licence => { %>
-                            <option value="<%= licence.id %>"><%= licence.name %></option>
+                            <option value="<%= licence.licence_id %>"><%= licence.licence_name %></option>
                             <% }); %>
                         </select>
                     </div>
@@ -72,7 +72,7 @@
 
                 <div class="form__box--flex">
                     <label class="form__label" for="pictures">Imágenes:</label>
-                    <input type="file" name="pictures" id="pictures" multiple required>
+                    <input type="file" name="pictures" id="pictures" accept="image/*" multiple required>
                 </div>
 
                 <div class="form__flex">

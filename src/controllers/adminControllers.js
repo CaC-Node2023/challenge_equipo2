@@ -1,28 +1,43 @@
 const fs = require('fs');
 const path = require('path');
-const {getProducts, addProduct} = require("../models/product.model");
+const {getProducts, addProduct, getOne, deleteOne, editProduct} = require("../models/product.model");
+const {getCategories} = require("../models/category.model");
+const {getLicences} = require("../models/licence.model");
 
 const adminControllers = {
-    admin: (req, res) => {
-        const items = fs.readFileSync(path.resolve(__dirname, '../data/items.json'));
-        const products = JSON.parse(items);
-        res.render('admin/admin', {
-            title: 'Funkoshop | Administrador',
-            products: products
-        });
+    admin: async (req, res) => {
+        const response = await getProducts();
+
+        if (response.error) {
+            res.send(response.message);
+        } else {
+            const products = response.rows;
+
+            res.render('admin/admin', {
+                title: 'Funkoshop | Administrador',
+                products: products
+            });
+        }
     },
 
-    create: (req, res) => {
-        const createJson = fs.readFileSync(path.resolve(__dirname, '../data/create.json'));
-        const content = JSON.parse(createJson);
-        let categories = content.categories;
-        let licences = content.licences;
+    create: async (req, res) => {
+        const categoriesResponse = await getCategories();
+        const licencesResponse = await getLicences();
 
-        res.render('admin/create', {
-            title: 'Funkoshop | Crear',
-            categories,
-            licences
-        });
+        if (categoriesResponse.error) {
+            categoriesResponse.send(categoriesResponse.message);
+        } else if (licencesResponse.error) {
+            licencesResponse.send(licencesResponse.message);
+        } else {
+            const categories = categoriesResponse.rows;
+            const licences = licencesResponse.rows;
+
+            res.render('admin/create', {
+                title: 'Funkoshop | Crear',
+                categories: categories,
+                licences: licences 
+            });
+        }
     },
 
     createItem: async (req, res) => {
@@ -34,43 +49,87 @@ const adminControllers = {
             discount: Number(req.body.discount),
             product_sku: req.body.sku,
             dues: Number(req.body.installments),
-            img_front: '/img/uploaded/'+req.files[1].filename,
-            img_back: '/img/uploaded/'+req.files[0].filename,
+            img_front: '/img/uploaded/' + req.files[0].filename,
+            img_back: '/img/uploaded/' + req.files[1].filename,
             category_id: Number(req.body.category),
-            licence_id: Number(req.body.license)
+            licence_id: Number(req.body.licence)
         };
+
         const arrayValues = [Object.values(schema)];
-        await addProduct(arrayValues);
 
-        res.redirect('/admin')
+        const response = await addProduct(arrayValues);
+
+        if (response.error) {
+            res.send(response.message);
+        } else {
+            res.redirect('/admin')
+        }
     },
 
-    edit: (req, res) => {
-        const createJson = fs.readFileSync(path.resolve(__dirname, '../data/create.json'));
-        const content = JSON.parse(createJson);
-        let categories = content.categories;
-        let licences = content.licences;
+    edit: async (req, res) => {
+        const { id } = req.params;
+        const productResponse = await getOne(id);
 
-        let products, product;
-        const itemJson = fs.readFileSync(path.resolve(__dirname, '../data/items.json'));
-        products = JSON.parse(itemJson);
+        const categoriesResponse = await getCategories();
+        const licencesResponse = await getLicences();
 
-        product = products.find(product => product.product_id === parseInt(req.params.id));
+        if (productResponse.error) {
+            productResponse.send(productResponse.message);
+        } else if (categoriesResponse.error) {
+            categoriesResponse.send(categoriesResponse.message);
+        } else if (licencesResponse.error) {
+            licencesResponse.send(licencesResponse.message);
+        } else {
+            const [product] = productResponse.rows;
+            const categories = categoriesResponse.rows;
+            const licences = licencesResponse.rows;
 
-        res.render('admin/edit', {
-            title: 'Funkoshop | Editar',
-            categories,
-            licences,
-            product
-        });
+            res.render('admin/edit', {
+                title: 'Funkoshop | Editar',
+                product: product,
+                categories: categories,
+                licences: licences,
+            });
+        }
     },
 
-    editItem: (req, res) => {
-        res.send('Esta ruta trata de actualizar la información de un ítem en la base de datos.')
+    editItem: async (req, res) => {
+        const schema = {
+            product_name: req.body.name,
+            product_description: req.body.description,
+            product_price: Number(req.body.price),
+            stock: Number(req.body.stock),
+            discount: Number(req.body.discount),
+            product_sku: req.body.sku,
+            dues: Number(req.body.installments),
+            category_id: Number(req.body.category),
+            licence_id: Number(req.body.licence)
+        }
+
+        if (req.files.length > 0) {schema['img_front'] = '/img/uploaded/' + req.files[0].filename;}
+        if (req.files.length > 1) {schema['img_back'] = '/img/uploaded/' + req.files[1].filename;}
+
+        const { id } = req.params;
+
+        const response = await editProduct(schema, {product_id: id});
+
+        if (response.error) {
+            res.send(response.message);
+        } else {
+            res.redirect('/admin')
+        }
     },
 
-    deleteItem: (req, res) => {
-        res.send('Esta ruta trata de eliminar un ítem de la base de datos.')
+    deleteItem: async (req, res) => {
+        const { id } = req.params;
+
+        const response = await deleteOne(id);
+
+        if (response.error) {
+            res.send(response.message);
+        } else {
+            res.redirect('/admin');
+        }
     }
 };
 
