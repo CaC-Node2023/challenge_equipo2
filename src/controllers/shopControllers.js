@@ -4,19 +4,18 @@ const {getProducts} = require("../models/product.model");
 
 const shopControllers = {
     shop: async  (req, res) => {
+        const response = await getProducts();
 
-        const data = await getProducts();
-        const products = data.slice(0, 9);
-        if (products.error) {
-            res.send(404);
+        if (response.error) {
+            res.send(response.message);
         } else {
-            
+            const products = response.rows.slice(0, 9);
+
             res.render('shop/shop', {
                 title: 'Funkoshop | Tienda',
                 products: products
             });
         }
-
     },
 
     item: (req, res) => {

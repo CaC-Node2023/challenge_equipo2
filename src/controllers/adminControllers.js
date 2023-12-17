@@ -4,18 +4,15 @@ const {getProducts, addProduct, getOne, deleteOne, editProduct} = require("../mo
 const {getCategories} = require("../models/category.model");
 const {getLicences} = require("../models/licence.model");
 
-
-
-
 const adminControllers = {
     admin: async (req, res) => {
-        
-        const products = await getProducts();
+        const response = await getProducts();
 
-        if (products.error) {
-            res.send(404); 
+        if (response.error) {
+            res.send(response.message);
         } else {
-            
+            const products = response.rows;
+
             res.render('admin/admin', {
                 title: 'Funkoshop | Administrador',
                 products: products
@@ -24,20 +21,22 @@ const adminControllers = {
     },
 
     create: async (req, res) => {
-
         const categoriesResponse = await getCategories();
-        const licences = await getLicences();
-        console.log(categoriesResponse.data);
+        const licencesResponse = await getLicences();
 
-        if (categoriesResponse.isError) {
-            res.send(404);
+        if (categoriesResponse.error) {
+            categoriesResponse.send(categoriesResponse.message);
+        } else if (licencesResponse.error) {
+            licencesResponse.send(licencesResponse.message);
         } else {
+            const categories = categoriesResponse.rows;
+            const licences = licencesResponse.rows;
+
             res.render('admin/create', {
                 title: 'Funkoshop | Crear',
-                categories: categoriesResponse.data,
+                categories: categories,
                 licences: licences 
             });
-            
         }
     },
 
@@ -50,57 +49,52 @@ const adminControllers = {
             discount: Number(req.body.discount),
             product_sku: req.body.sku,
             dues: Number(req.body.installments),
-            img_front: '/img/uploaded/'+req.files[1].filename,
-            img_back: '/img/uploaded/'+req.files[0].filename,
+            img_front: '/img/uploaded/' + req.files[0].filename,
+            img_back: '/img/uploaded/' + req.files[1].filename,
             category_id: Number(req.body.category),
-            licence_id: Number(req.body.license)
+            licence_id: Number(req.body.licence)
         };
-        const arrayValues = [Object.values(schema)];
-        await addProduct(arrayValues);
 
-        res.redirect('/admin')
+        const arrayValues = [Object.values(schema)];
+
+        const response = await addProduct(arrayValues);
+
+        if (response.error) {
+            res.send(response.message);
+        } else {
+            res.redirect('/admin')
+        }
     },
 
     edit: async (req, res) => {
         const { id } = req.params;
-        
-        const [product] = await getOne(id);
-       
+        const productResponse = await getOne(id);
+
         const categoriesResponse = await getCategories();
-        const licences = await getLicences();
-    
-        res.render('admin/edit', {
-            title: 'Funkoshop | Editar',
-            categories: categoriesResponse.data,
-            licences: licences,
-            product: product
-        });
+        const licencesResponse = await getLicences();
+
+        if (productResponse.error) {
+            productResponse.send(productResponse.message);
+        } else if (categoriesResponse.error) {
+            categoriesResponse.send(categoriesResponse.message);
+        } else if (licencesResponse.error) {
+            licencesResponse.send(licencesResponse.message);
+        } else {
+            const [product] = productResponse.rows;
+            const categories = categoriesResponse.rows;
+            const licences = licencesResponse.rows;
+
+            res.render('admin/edit', {
+                title: 'Funkoshop | Editar',
+                product: product,
+                categories: categories,
+                licences: licences,
+            });
+        }
     },
-    
 
     editItem: async (req, res) => {
-        console.log(req.params);
-        console.log(req.body);
-        console.log(req.files);
-
-        const haveImages = req.files.length !== 0;
-        const { id } = req.params;
-        // const [product] = await getOne({product_id: id})
-        const schema = haveImages 
-         ? {
-            product_name: req.body.name,
-            product_description: req.body.description,
-            product_price: Number(req.body.price),
-            stock: Number(req.body.stock),
-            discount: Number(req.body.discount),
-            product_sku: req.body.sku,
-            dues: Number(req.body.installments),
-            img_front: '/img/uploaded/'+req.files[1].filename,
-            img_back: '/img/uploaded/'+req.files[0].filename,
-            category_id: Number(req.body.category),
-            licence_id: Number(req.body.license)
-        }:
-        {
+        const schema = {
             product_name: req.body.name,
             product_description: req.body.description,
             product_price: Number(req.body.price),
@@ -109,29 +103,33 @@ const adminControllers = {
             product_sku: req.body.sku,
             dues: Number(req.body.installments),
             category_id: Number(req.body.category),
-            licence_id: Number(req.body.license)
+            licence_id: Number(req.body.licence)
         }
-         
-        
-        await editProduct(schema, {product_id : id});
 
+        if (req.files.length > 0) {schema['img_front'] = '/img/uploaded/' + req.files[0].filename;}
+        if (req.files.length > 1) {schema['img_back'] = '/img/uploaded/' + req.files[1].filename;}
 
-        res.redirect('/admin')
+        const { id } = req.params;
+
+        const response = await editProduct(schema, {product_id: id});
+
+        if (response.error) {
+            res.send(response.message);
+        } else {
+            res.redirect('/admin')
+        }
     },
 
     deleteItem: async (req, res) => {
-
         const { id } = req.params;
-        const response = await deleteOne(id)
+
+        const response = await deleteOne(id);
+
         if (response.error) {
-            res.send(409)
-            
+            res.send(response.message);
         } else {
-            
             res.redirect('/admin');
         }
-
-
     }
 };
 
