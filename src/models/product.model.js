@@ -1,17 +1,50 @@
 const { conn } = require('../config/conn');
 
-const getProducts = async () => {
+const getProducts = async (conditions = null,
+                           orderFields = null,
+                           limitValue = null,
+                           offsetValue = null) => {
+    let conditionValues = null;
+    let query = 'SELECT ' +
+                    'product.*, ' +
+                    'licence.licence_name, ' +
+                    'category.category_name ' +
+                'FROM product ' +
+                'INNER JOIN category ' +
+                    'ON product.category_id = category.category_id ' +
+                'INNER JOIN licence ' +
+                    'ON product.licence_id = licence.licence_id';
+    if (conditions) {
+        const where = Object.keys(conditions)
+            .map(key => {
+                const value = conditions[key];
+                if (typeof value === 'object' && value.operator) {
+                    //Si el invocador especificó un operador:
+                    return `${conn.escapeId(key)} ${value.operator} ?`;
+                } else {
+                    //Caso contrario, chequea igualdad:
+                    return `${conn.escapeId(key)} = ?`;
+                }
+            })
+            .join(' AND ');
+
+        conditionValues = Object.values(conditions).map(value => {
+            //Extrae los valores de las condiciones:
+            return typeof value === 'object' ? value.value : value;
+        });
+
+        query += ` WHERE ${where} `;
+    }
+    if (orderFields) {
+        const order = orderFields.join(',');
+        query += ` ORDER BY ${order} `;
+    }
+    if (limitValue) {query += ' LIMIT ' + limitValue;}
+    if (offsetValue) {query += ' OFFSET ' + offsetValue;}
+    query += ';';
+
     try {
-        const [ rows ] = await conn.query(  'SELECT ' +
-                                                'product.*, ' +
-                                                'licence.licence_name, ' +
-                                                'category.category_name ' +
-                                            'FROM product ' +
-                                            'INNER JOIN licence ' +
-                                                'ON product.licence_id = licence.licence_id ' +
-                                            'INNER JOIN category ' +
-                                                'ON product.category_id = category.category_id ' +
-                                            'ORDER BY product.product_id;');
+        const [ rows ] = await conn.query(query, conditionValues);
         return {
             error: false,
             rows
@@ -115,10 +148,23 @@ const deleteOne = async (id) => {
     }
 };
 
+const getCount = async () => {
+    try {
+        const [result] = await conn.query('SELECT COUNT(*) as total FROM product;');
+        return result[0].total;
+    } catch (error) {
+        console.error('Error al obtener el total de productos: ', error);
+        throw new Error('Error al obtener el total de productos.');
+    } finally {
+        conn.releaseConnection()
+    }
+};
+
 module.exports = {
     getProducts,
     addProduct,
     getOne,
     editProduct,
-    deleteOne
+    deleteOne,
+    getCount
 };
