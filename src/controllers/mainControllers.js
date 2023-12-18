@@ -1,16 +1,36 @@
-const fs = require('fs');
-const path = require('path');
+const {getLicences} = require("../models/licence.model");
+const {getProducts} = require("../models/product.model");
 
 const mainControllers = {
-    home: (req, res) => {
-        const home = fs.readFileSync(path.resolve(__dirname, '../data/home.json'));
-        const licences = JSON.parse(home).licences;
+    home: async (req, res) => {
+        //Licencias:
+        let licences = null;
 
-        const sliderJson = fs.readFileSync(path.resolve(__dirname, '../data/slider.json'));
-        const slider = {
-            title: 'Últimos lanzamientos',
-            products: JSON.parse(sliderJson).products
-        };
+        const licencesResponse = await getLicences();
+
+        if (licencesResponse.error) {
+            res.send(licencesResponse.message);
+        } else {
+            licences = licencesResponse.rows;
+        }
+        //
+
+        //Slider:
+        let slider = null;
+
+        const orderFields = ['create_time DESC', 'product_id'];
+
+        const sliderResponse = await getProducts(null, orderFields, 4);
+
+        if (sliderResponse.error) {
+            res.send(sliderResponse.message);
+        } else {
+            slider = {
+                title: 'Últimos lanzamientos',
+                products: sliderResponse.rows
+            };
+        }
+        //
 
         res.render('home', {
             title: 'Funkoshop | Inicio',
