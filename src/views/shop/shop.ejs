@@ -42,7 +42,9 @@
                     <article class="shop-collection___content card-item">
                         <a class="card-item__link" href="/shop/item/<%= product.product_id%>" id="<%= product.product_id %>">
                             <picture class="card-item__cover">
-                                <span class="card-item__tag">Nuevo</span>
+                                <% if (new Date(product.create_time) >= new Date(new Date().setDate(new Date().getDate() - 60))) { %>
+                                    <span class="card-item__tag">Nuevo</span>
+                                <% } %>
                                 <img class="card-item__img--back" src=<%= product.img_back %> alt=<%= product.product_description + ' en caja' %>>
                                 <img class="card-item__img--front" src=<%= product.img_front %> alt=<%= product.product_description %>>
                             </picture>
@@ -58,13 +60,11 @@
                 <% }); %>
             </ul>
             <div class="pagination">
-                <a class="pagination__link after" href="#" ><</a>
-                <a class="pagination__link pagination__link--selected" href="#" >1</a>
-                <a class="pagination__link" href="#" >2</a>
-                <a class="pagination__link" href="#" >3</a>
-                <a class="pagination__link" href="#" >4</a>
-                <a class="pagination__link" href="#" >5</a>
-                <a class="pagination__link next" href="#" >></a>
+                <a class="pagination__link"><</a>
+                <% for (let page = 1; page <= totalPages; page++) { %>
+                <a class="pagination__link <%= page === currentPage ? "pagination__link--selected" : "" %>" href="/shop?page=<%= page %>"><%= page %></a>
+                <% } %>
+                <a class="pagination__link">></a>
             </div>
         </section>
     </main>
