@@ -1,3 +1,5 @@
+const {findByEmail} = require("../models/user.model");
+
 const authControllers = {
    login: (req, res) => {
         res.render('auth/login', {
@@ -5,13 +7,36 @@ const authControllers = {
         });
    },
 
-   loginUser: (req, res) => {
-        res.send('Esta ruta manda la solicitud de inicio de sesión.');
+   loginUser: async (req, res) => {
+       const { email, password } = req.body;
+
+       //Buscamos usuario en la BD:
+       let user = null;
+
+       const userResponse = await findByEmail(email);
+
+       if (userResponse.error) {
+           res.send(userResponse.message);
+       } else {
+           [user] = userResponse.rows;
+       }
+
+       const emailValidation = user.email === email;
+       const passwordValidation = user.password === password;
+
+       req.session.isLogged = emailValidation && passwordValidation;
+
+       if (req.session.isLogged) {
+           res.locals.isLogged = true;
+           return res.redirect('/admin');
+       }
+
+       return res.status(401).send('Credenciales inválidas.');
    },
 
    register: (req, res) => {
         res.render('auth/register', {
-            title: 'Funkoshop | Registro',
+            title: 'Funkoshop | Registro'
         });
    },
 
@@ -20,9 +45,8 @@ const authControllers = {
    },
 
    logoutUser: (req, res) => {
-        res.render('home', {
-            title: 'Funkoshop | Inicio',
-        });
+       req.session.isLogged = false;
+       res.redirect('/home');
    }
 }
 
