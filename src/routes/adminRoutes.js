@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+const { isLogged } = require('../middlewares/login');
+
 const adminControllers = require('../controllers/adminControllers');
+
+router.use(isLogged);
 
 const uploadFile = require('../middlewares/uploadFiles');
 
