@@ -80,7 +80,7 @@ La última versión estable de la aplicación se puede probar en [Render][render
 - Crear una base de datos con codificación `utf8_spanish_ci`
 - Importar en la base de datos el archivo `/db/script.sql`
 - Ejecutar `npm install` para instalar las dependencias
-- Renombrar el archivo de configuración con el comando `copy .env.example .env` (y completar las variables de entorno según corresponda)
+- Generar el archivo de configuración con el comando `copy .env.example .env` y completar las variables de entorno según corresponda
 - Levantar el servidor mediante `npm start`
 
 

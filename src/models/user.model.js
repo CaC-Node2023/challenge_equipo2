@@ -2,14 +2,11 @@ const { conn } = require('../config/conn');
 
 // Find a user by email
 const findByEmail = async (email) => {
-    const sql = 'SELECT * FROM user WHERE email = ?';
-    const values = [email];
-
     try {
-        const [rows] = await conn.query(sql, values);
-        console.log(rows);
+        const [rows] = await conn.query('SELECT * FROM user WHERE email = ?', email);
+
         return {
-            error: results.length > 0,
+            error: rows.length < 1,
             rows
         }
     } catch (error) {
