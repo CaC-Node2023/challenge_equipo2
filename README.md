@@ -21,6 +21,7 @@
 * [Integrantes del grupo](#integrantes-del-grupo)
 * [Acerca del proyecto](#acerca-del-proyecto)
     * [Demo en vivo](#demo-en-vivo)
+* [Instalación desde el código fuente](#instalacion-desde-el-codigo-fuente)
 * [Documentación](#documentacion)
 
 
@@ -66,6 +67,21 @@ En segundo lugar, se necesita contar con las vistas necesarias para administrar 
 Se puede ver la página web estática (hasta la misión 3) desde [acá][pages-url].
 
 La última versión estable de la aplicación se puede probar en [Render][render-url].
+
+
+
+<!-- INSTALACION -->
+## Instalacion desde el codigo fuente
+### Windows
+- Descargar e instalar los prerequisitos: <p align="center"><a href="https://git-scm.com/download/win"><img src="doc/git.png" alt="Logo" width="90"></a><img src="doc/blank.png" width=60></img><a href="https://nodejs.org/en/download"><img src="doc/node.svg" alt="Logo" width="70"></a><img src="doc/blank.png" width=60></img><a href="https://mariadb.org/download/"><img src="doc/mariadb.png" alt="Logo" width="140"></a></p>
+
+
+- Clonar el repositorio utilizando `git clone https://github.com/CaC-Node2023/challenge_equipo2.git`
+- Crear una base de datos con codificación `utf8_spanish_ci`
+- Importar en la base de datos el archivo `/db/script.sql`
+- Ejecutar `npm install` para instalar las dependencias
+- Generar el archivo de configuración con el comando `copy .env.example .env` y completar las variables de entorno según corresponda
+- Levantar el servidor mediante `npm start`
 
 
 

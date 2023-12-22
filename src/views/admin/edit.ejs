@@ -8,18 +8,19 @@
                     <select class="form__select" name="category" id="category" required>
                         <option value="" disabled selected hidden>Seleccionar</option>
                         <% categories.forEach( category => { %>
-                            <option value="<%= category.id %>"><%= category.name %></option>
+                            <option value="<%= category.category_id %>" <% if (category.category_id === product.category_id){  %> selected <% } %>><%= category.category_name %></option>
                         <% }); %>
                     </select>
                 </div>
                 <div class="form__box--flex">
-                    <label class="form__label" for="license">Licencia:</label>
-                    <select class="form__select" name="license" id="license" required>
-                        <option value="" disabled selected hidden>Seleccionar</option>
-                        <% licences.forEach( licence => { %>
-                            <option value="<%= licence.id %>"><%= licence.name %></option>
+                    <label class="form__label" for="licence">Licencia:</label>
+                    <select class="form__select" name="licence" id="licence" required>
+                        <option value="" disabled hidden>Seleccionar</option>
+                        <% licences.forEach(licence => { %>
+                            <option value="<%= licence.licence_id %>" <% if (licence.licence_id === product.licence_id) { %> selected <% } %>><%= licence.licence_name %></option>
                         <% }); %>
                     </select>
+                    
                 </div>
             </div>
             <div class="form__box--flex">
@@ -36,32 +37,36 @@
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="price">Precio:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--mid" type="text" name="price" id="price" value="$ <%- product.product_price %>" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--mid" type="number" name="price" id="price" step=".01" value="<%- product.product_price %>" required></div>
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="stock">Stock:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="stock" id="stock" value="<%- product.dues %>" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="number" name="stock" id="stock" value="<%- product.stock %>" required></div>
                 </div>
             </div>
             <div class="form__flex">
                 <div class="form__box--flex">
                     <label class="form__label" for="discount">Descuento:</label>
-                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="text" name="discount" id="discount" value="<%- product.dues %>%" required></div>
+                    <div class="form__input--wrapper"><input class="form__input create__form__input--small" type="number" name="discount" id="discount" value="<%- product.discount %>" required></div>
                 </div>
                 <div class="form__box--flex">
                     <label class="form__label" for="installments">Cuotas:</label>
                     <select class="form__select" name="installments" id="installments" required>
-                        <option value="" disabled selected hidden>Seleccionar</option>
-                        <option value="1">Contado</option>
-                        <option value="3">3 cuotas sin interés</option>
-                        <option value="6">6 cuotas con interés</option>
-                        <option value="12">12 cuotas con mucho interés</option>
+                        <option value="" disabled hidden>Seleccionar</option>
+                        <% const installmentsOptions = [1, 3, 6, 12]; %>
+                        <% installmentsOptions.forEach(option => { %>
+                            <option value="<%= option %>" <% if (option === product.dues) { %> selected <% } %>>
+                                <% if (option === 1) { %>Contado<% } else { %><%= option %> cuotas<% if (option > 1) { %> sin interés<% } %><% } %>
+                            </option>
+                        <% }); %>
                     </select>
+                    
+                    
                 </div>
             </div>
             <div class="form__box--flex">
                 <label class="form__label" for="pictures">Imágenes:</label>
-                <input type="file" name="pictures" id="pictures" multiple required>
+                <input type="file" name="pictures" id="pictures" accept="image/*" multiple>
             </div>
            <ul class="edit__pictures"><!--Inicio Frente y dorso -->
                 <li class="edit__picture">
